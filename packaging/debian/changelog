@@ -1,3 +1,9 @@
+tv-shell (0.1.5-1) unstable; urgency=low
+
+  * Include the advanced terminal navigation wiring in the source release.
+
+ -- TV Shell maintainers <maintainers@example.invalid>  Thu, 13 Aug 2026 18:30:00 -0300
+
 tv-shell (0.1.4-1) unstable; urgency=low
 
   * Add remote setup/update helpers and an advanced maintenance terminal entry.

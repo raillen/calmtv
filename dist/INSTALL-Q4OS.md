@@ -7,7 +7,7 @@ opcional e não remove o desktop atual.
 
 ```bash
 sudo apt update
-sudo apt install ./tv-shell_0.1.4_amd64.deb
+sudo apt install ./tv-shell_0.1.5_amd64.deb
 ```
 
 O pacote aceita os nomes modernos `pkexec`/`polkitd` e mantém fallback para o
