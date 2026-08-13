@@ -1,3 +1,9 @@
+tv-shell (0.1.1-1) unstable; urgency=low
+
+  * Support modern Debian polkit package names while retaining Bookworm compatibility.
+
+ -- TV Shell maintainers <maintainers@example.invalid>  Thu, 13 Aug 2026 17:00:00 -0300
+
 tv-shell (0.1.0-1) unstable; urgency=low
 
   * Initial MVP implementation.

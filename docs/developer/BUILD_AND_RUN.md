@@ -44,6 +44,9 @@ Em uma máquina Debian amd64 de teste:
 sudo apt install ./tv-shell_*.deb
 ```
 
+The package declares `pkexec` and `polkitd` with a fallback to Debian's older
+`policykit-1` transitional package.
+
 Depois, encerre a sessão atual, selecione `TV Shell` no menu de sessões da
 tela de login e entre normalmente. Para voltar, selecione o desktop anterior
 no mesmo menu. A instalação não troca o display manager nem altera a sessão

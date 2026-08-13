@@ -10,6 +10,10 @@ Baseline distribution:
 
 Third-party components remain packages/dependencies where possible rather than copied binaries.
 
+The package accepts both Debian's modern `pkexec`/`polkitd` packages and the
+older `policykit-1` transitional package, so installation remains compatible
+with Q4OS releases based on different Debian versions.
+
 The package also installs an optional display-manager session at
 `/usr/share/xsessions/tv-shell.desktop`. Selecting it starts
 `/usr/bin/tv-shell-session`, which owns the Matchbox process and returns to the

@@ -7,8 +7,11 @@ opcional e não remove o desktop atual.
 
 ```bash
 sudo apt update
-sudo apt install ./tv-shell_0.1.0_amd64.deb
+sudo apt install ./tv-shell_0.1.1_amd64.deb
 ```
+
+O pacote aceita os nomes modernos `pkexec`/`polkitd` e mantém fallback para o
+pacote transitório `policykit-1` das versões Debian anteriores.
 
 Se o APT solicitar dependências, confirme a instalação. Depois encerre a
 sessão atual e escolha `TV Shell` no menu de sessões da tela de login.
