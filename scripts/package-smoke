@@ -18,8 +18,12 @@ if grep -q '^WantedBy=graphical-session.target' packaging/systemd/tv-shell.servi
 	exit 1
 fi
 grep -q 'org.freedesktop.policykit.exec.path' packaging/polkit/org.calmtv.tv-shell-update.policy
-grep -q '(pkexec | policykit-1)' packaging/debian/control
-grep -q '(polkitd | policykit-1)' packaging/debian/control
+grep -q 'pkexec | policykit-1' packaging/debian/control
+grep -q 'polkitd | policykit-1' packaging/debian/control
+if grep -qE '^Depends:.*[()]' packaging/debian/control; then
+	echo 'Debian dependency fields must not use grouping parentheses' >&2
+	exit 1
+fi
 grep -q '^Exec=/usr/bin/tv-shell-session$' packaging/session/tv-shell.desktop
 grep -q 'matchbox-window-manager' packaging/session/tv-shell-session
 test -x packaging/session/tv-shell-session

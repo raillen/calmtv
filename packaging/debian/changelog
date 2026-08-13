@@ -1,3 +1,9 @@
+tv-shell (0.1.2-1) unstable; urgency=low
+
+  * Use valid Debian alternative-dependency syntax for polkit packages.
+
+ -- TV Shell maintainers <maintainers@example.invalid>  Thu, 13 Aug 2026 17:15:00 -0300
+
 tv-shell (0.1.1-1) unstable; urgency=low
 
   * Support modern Debian polkit package names while retaining Bookworm compatibility.
