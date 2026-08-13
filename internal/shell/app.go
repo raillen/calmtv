@@ -204,6 +204,12 @@ func (a *App) handleInput(event input.Event) {
 		a.activate(a.focus.Current())
 	case input.Home:
 		a.showHome()
+	case input.Menu:
+		if a.activeScreen == "home" {
+			a.showScreen("diagnostics")
+		} else {
+			a.status.SetText("Menu avançado disponível na Home")
+		}
 	case input.Back:
 		if a.activeScreen == "home" {
 			a.status.SetText("Home — Back")
@@ -284,12 +290,12 @@ func (a *App) configureScreens(homeGrid *gtk.Grid) error {
 		"iptv":        {"import-playlist", "favorites", "epg", "back"},
 		"games":       {"rom-library", "back"},
 		"files":       {"downloads", "videos", "music", "games", "usb", "back"},
-		"diagnostics": {"run-diagnostics", "back"},
+		"diagnostics": {"run-diagnostics", "terminal", "back"},
 		"power":       {"suspend", "reboot", "power-off", "back"},
 		"streaming":   {"open-streaming", "back"},
 	}
 	labels := map[string]string{
-		"wifi": "Wi-Fi", "wifi-connect": "Conectar Wi-Fi padrão", "bluetooth": "Bluetooth", "bluetooth-power": "Ativar Bluetooth", "volume": "Volume", "audio-output": "Saída de áudio", "display": "Display", "display-apply": "Aplicar display padrão", "storage": "Armazenamento USB", "storage-mount": "Montar USB padrão", "suspend": "Suspender", "reboot": "Reiniciar", "power-off": "Desligar", "back": "Voltar", "videos": "Vídeos", "music": "Música", "usb": "USB", "continue-watching": "Continuar assistindo", "search": "Pesquisar", "import-playlist": "Importar playlist", "favorites": "Favoritos", "epg": "Guia EPG", "rom-library": "Biblioteca de jogos", "downloads": "Downloads", "games": "Jogos", "run-diagnostics": "Executar diagnóstico", "open-streaming": "Abrir streaming",
+		"wifi": "Wi-Fi", "wifi-connect": "Conectar Wi-Fi padrão", "bluetooth": "Bluetooth", "bluetooth-power": "Ativar Bluetooth", "volume": "Volume", "audio-output": "Saída de áudio", "display": "Display", "display-apply": "Aplicar display padrão", "storage": "Armazenamento USB", "storage-mount": "Montar USB padrão", "suspend": "Suspender", "reboot": "Reiniciar", "power-off": "Desligar", "back": "Voltar", "videos": "Vídeos", "music": "Música", "usb": "USB", "continue-watching": "Continuar assistindo", "search": "Pesquisar", "import-playlist": "Importar playlist", "favorites": "Favoritos", "epg": "Guia EPG", "rom-library": "Biblioteca de jogos", "downloads": "Downloads", "games": "Jogos", "run-diagnostics": "Executar diagnóstico", "terminal": "Terminal avançado", "open-streaming": "Abrir streaming",
 	}
 	for screen, ids := range screens {
 		page, pageErr := gtk.BoxNew(gtk.ORIENTATION_VERTICAL, 18)
@@ -569,6 +575,14 @@ func (a *App) activateScreenButton(screen, id string) {
 		a.status.SetText(fmt.Sprintf("Diagnóstico salvo: %d verificações", len(report.Commands)))
 		return
 	}
+	if screen == "diagnostics" && id == "terminal" {
+		if err := launchMaintenanceTerminal(); err != nil {
+			a.status.SetText(err.Error())
+			return
+		}
+		a.status.SetText("Terminal avançado aberto como usuário normal")
+		return
+	}
 	a.status.SetText(screen + ": " + id)
 }
 
@@ -763,12 +777,28 @@ func runtimeSocketPath() string {
 
 func orderedButtonIDs(buttons map[string]*gtk.Button) []string {
 	ids := make([]string, 0, len(buttons))
-	for _, id := range []string{"wifi", "wifi-connect", "bluetooth", "bluetooth-power", "volume", "audio-output", "display", "display-apply", "storage", "storage-mount", "suspend", "reboot", "power-off", "videos", "music", "usb", "continue-watching", "search", "import-playlist", "favorites", "epg", "rom-library", "downloads", "games", "run-diagnostics", "open-streaming", "back"} {
+	for _, id := range []string{"wifi", "wifi-connect", "bluetooth", "bluetooth-power", "volume", "audio-output", "display", "display-apply", "storage", "storage-mount", "suspend", "reboot", "power-off", "videos", "music", "usb", "continue-watching", "search", "import-playlist", "favorites", "epg", "rom-library", "downloads", "games", "run-diagnostics", "terminal", "open-streaming", "back"} {
 		if _, ok := buttons[id]; ok {
 			ids = append(ids, id)
 		}
 	}
 	return ids
+}
+
+func launchMaintenanceTerminal() error {
+	for _, candidate := range []string{"qterminal", "xfce4-terminal", "mate-terminal", "konsole", "xterm"} {
+		path, err := exec.LookPath(candidate)
+		if err != nil {
+			continue
+		}
+		command := exec.Command(path)
+		if err := command.Start(); err != nil {
+			return fmt.Errorf("não foi possível abrir o terminal avançado: %w", err)
+		}
+		go func() { _ = command.Wait() }()
+		return nil
+	}
+	return fmt.Errorf("nenhum terminal gráfico encontrado; instale qterminal ou xterm")
 }
 
 func object[T any](builder *gtk.Builder, id string) (T, error) {
