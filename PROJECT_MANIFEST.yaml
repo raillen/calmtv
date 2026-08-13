@@ -2,7 +2,7 @@
 # This projection exists only for older Atlas CLI builds that still probe YAML.
 version: 2
 project:
-  name: TV Shell
+  name: Calm TV
   type:
     - desktop
     - linux-appliance

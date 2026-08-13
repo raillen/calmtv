@@ -2,8 +2,8 @@
 <!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN" "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
 <policyconfig>
   <action id="org.calmtv.tv-shell.update">
-    <description>Update TV Shell packages</description>
-    <message>Authentication is required to update TV Shell</message>
+    <description>Atualizar pacotes do Calm TV</description>
+    <message>Autenticação necessária para atualizar o Calm TV</message>
     <defaults>
       <allow_any>no</allow_any>
       <allow_inactive>no</allow_inactive>

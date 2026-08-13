@@ -147,16 +147,16 @@ func New() (*App, error) {
 
 func (a *App) Run() {
 	a.window.ShowAll()
+	if a.fullscreen {
+		a.fullscreenOnConfiguredMonitor()
+	}
 	a.syncFocus()
 	gtk.Main()
 }
 
 func (a *App) configure() {
-	a.window.SetName("tv-shell-window")
+	a.window.SetName("calm-tv-window")
 	a.window.SetDefaultSize(1280, 720)
-	if a.fullscreen {
-		a.window.Fullscreen()
-	}
 
 	provider, err := gtk.CssProviderNew()
 	if err == nil && provider.LoadFromData(string(themeCSS)) == nil {

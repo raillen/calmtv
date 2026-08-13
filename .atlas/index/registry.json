@@ -10,7 +10,7 @@
       "section": "root",
       "status": "active",
       "tags": [],
-      "title": "TV Shell \u2014 Project ATLAS",
+      "title": "Calm TV \u2014 Project ATLAS",
       "visibility": "internal"
     },
     {
@@ -367,7 +367,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 182,
+      "estimated_tokens": 181,
       "id": "DOC-DOCS-DECISIONS-ADR-0001-DEBIAN-13-MINIMAL",
       "path": "docs/decisions/ADR-0001-DEBIAN-13-MINIMAL.md",
       "schema_version": 1,
@@ -406,7 +406,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 141,
+      "estimated_tokens": 140,
       "id": "DOC-DOCS-DECISIONS-ADR-0004-GO-GTK3",
       "path": "docs/decisions/ADR-0004-GO-GTK3.md",
       "schema_version": 1,
@@ -419,7 +419,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 140,
+      "estimated_tokens": 139,
       "id": "DOC-DOCS-DECISIONS-ADR-0005-MODULAR-SUBPROCESSES",
       "path": "docs/decisions/ADR-0005-MODULAR-SUBPROCESSES.md",
       "schema_version": 1,
@@ -445,7 +445,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 130,
+      "estimated_tokens": 129,
       "id": "DOC-DOCS-DECISIONS-ADR-0007-MPV-JSON-IPC",
       "path": "docs/decisions/ADR-0007-MPV-JSON-IPC.md",
       "schema_version": 1,
@@ -458,7 +458,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 127,
+      "estimated_tokens": 126,
       "id": "DOC-DOCS-DECISIONS-ADR-0008-SQLITE-FTS5",
       "path": "docs/decisions/ADR-0008-SQLITE-FTS5.md",
       "schema_version": 1,
@@ -471,7 +471,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 126,
+      "estimated_tokens": 125,
       "id": "DOC-DOCS-DECISIONS-ADR-0009-SYSTEM-ADAPTERS",
       "path": "docs/decisions/ADR-0009-SYSTEM-ADAPTERS.md",
       "schema_version": 1,
@@ -484,7 +484,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 103,
+      "estimated_tokens": 102,
       "id": "DOC-DOCS-DECISIONS-ADR-0010-MPRIS",
       "path": "docs/decisions/ADR-0010-MPRIS.md",
       "schema_version": 1,
@@ -510,7 +510,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 136,
+      "estimated_tokens": 135,
       "id": "DOC-DOCS-DECISIONS-ADR-0012-FIREFOX-STREAMING-RUNTIME",
       "path": "docs/decisions/ADR-0012-FIREFOX-STREAMING-RUNTIME.md",
       "schema_version": 1,
@@ -549,7 +549,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 125,
+      "estimated_tokens": 124,
       "id": "DOC-DOCS-DECISIONS-ADR-0015-SANDBOX",
       "path": "docs/decisions/ADR-0015-SANDBOX.md",
       "schema_version": 1,
@@ -640,7 +640,20 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 391,
+      "estimated_tokens": 476,
+      "id": "DOC-DOCS-DECISIONS-ADR-0022-MULTI-MONITOR-SURFACE",
+      "path": "docs/decisions/ADR-0022-MULTI-MONITOR-SURFACE.md",
+      "schema_version": 1,
+      "section": "decisions",
+      "status": "active",
+      "tags": [],
+      "title": "ADR-0022 \u2014 Superf\u00EDcie \u00FAnica para m\u00FAltiplos monitores",
+      "visibility": "internal"
+    },
+    {
+      "authority": "canonical",
+      "category": null,
+      "estimated_tokens": 412,
       "id": "DOC-DOCS-DECISIONS-ATLAS",
       "path": "docs/decisions/ATLAS.md",
       "schema_version": 1,
@@ -679,7 +692,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 626,
+      "estimated_tokens": 749,
       "id": "DOC-DOCS-DEVELOPER-BUILD-AND-RUN",
       "path": "docs/developer/BUILD_AND_RUN.md",
       "schema_version": 1,
@@ -887,7 +900,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 115,
+      "estimated_tokens": 240,
       "id": "DOC-DOCS-OPERATIONS-CONFIGURATION",
       "path": "docs/operations/CONFIGURATION.md",
       "schema_version": 1,
@@ -926,7 +939,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 269,
+      "estimated_tokens": 268,
       "id": "DOC-DOCS-OPERATIONS-RECOVERY",
       "path": "docs/operations/RECOVERY.md",
       "schema_version": 1,
@@ -1251,7 +1264,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 227,
+      "estimated_tokens": 279,
       "id": "DOC-DOCS-RELEASE-PACKAGING",
       "path": "docs/release/PACKAGING.md",
       "schema_version": 1,
@@ -1446,7 +1459,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 352,
+      "estimated_tokens": 423,
       "id": "DOC-DOCS-TESTING-HARDWARE-MATRIX",
       "path": "docs/testing/HARDWARE_MATRIX.md",
       "schema_version": 1,
@@ -1641,7 +1654,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 238,
+      "estimated_tokens": 330,
       "id": "DOC-DOCS-UI-UX-SCREEN-SPECS",
       "path": "docs/ui-ux/SCREEN_SPECS.md",
       "schema_version": 1,

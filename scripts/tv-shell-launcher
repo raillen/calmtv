@@ -14,7 +14,7 @@ if [ "$failures" -ge 3 ]; then
 	# A failed UI configuration must not create an infinite blank restart loop.
 	rm -f "$failure_file"
 	export TV_SHELL_RECOVERY=1
-	printf '%s\n' "TV Shell iniciou em modo de recuperação; configurações temporárias foram ignoradas." >&2
+	printf '%s\n' "Calm TV iniciou em modo de recuperação; configurações temporárias foram ignoradas." >&2
 else
 	export TV_SHELL_RECOVERY=0
 fi

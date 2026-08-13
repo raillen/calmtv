@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-version=${TV_SHELL_VERSION:-0.1.2}
+version=${TV_SHELL_VERSION:-0.1.3}
 architecture=amd64
 package_name=tv-shell
 work_dir=$(mktemp -d)
@@ -40,8 +40,8 @@ Priority: optional
 Architecture: $architecture
 Maintainer: TV Shell maintainers <maintainers@raillen.dev>
 Depends: dbus, libgtk-3-0, matchbox-window-manager, xserver-xorg, systemd-zram-generator, pkexec | policykit-1, polkitd | policykit-1
-Description: remote-first TV shell for low-end Debian systems
- Ultra-light GTK3 TV shell with central keyboard/D-pad navigation.
+Description: Calm TV remote-first media shell for low-end Debian systems
+ Ultra-light GTK3 Calm TV shell with central keyboard/D-pad navigation.
 EOF
 
 mkdir -p dist

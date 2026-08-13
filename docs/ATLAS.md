@@ -1,4 +1,4 @@
-# TV Shell — Project ATLAS
+# Calm TV — Project ATLAS
 
 This file is an **intent router**, not a request to read the documentation tree. Start with the task you are trying to accomplish and load only the linked material you need.
 

@@ -22,6 +22,6 @@ runtime directory. After three failures it enters a recovery-marked launch
 instead of silently creating an endless blank restart loop. The recovery
 package can reset only the UI configuration, preserving runtime state.
 
-When TV Shell is installed beside another desktop, recovery is scoped to the
-TV Shell session. Selecting the previous desktop session at login remains the
-fallback if the TV Shell session cannot start.
+When Calm TV is installed beside another desktop, recovery is scoped to the
+Calm TV session. Selecting the previous desktop session at login remains the
+fallback if the Calm TV session cannot start.

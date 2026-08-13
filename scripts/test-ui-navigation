@@ -29,7 +29,7 @@ trap cleanup EXIT INT TERM
 TV_SHELL_WINDOWED=1 "$binary" >"$log_file" 2>&1 &
 shell_pid=$!
 sleep 1
-window_id=$(xdotool search --name 'TV Shell' | head -1)
+window_id=$(xdotool search --name 'Calm TV' | head -1)
 xdotool windowactivate "$window_id"
 xdotool key Down Down Return Right Down Return Home
 sleep 1

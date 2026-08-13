@@ -1,5 +1,5 @@
 [Unit]
-Description=TV Shell zram configuration check
+Description=Calm TV zram configuration check
 After=systemd-zram-setup@zram0.service
 
 [Service]

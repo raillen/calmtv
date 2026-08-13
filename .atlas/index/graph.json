@@ -165,7 +165,7 @@
     {
       "id": "DOC-DOCS-ATLAS",
       "path": "docs/ATLAS.md",
-      "title": "TV Shell \u2014 Project ATLAS",
+      "title": "Calm TV \u2014 Project ATLAS",
       "type": "document",
       "visibility": "internal"
     },
@@ -341,6 +341,13 @@
       "id": "DOC-DOCS-DECISIONS-ADR-0021-NO-TELEMETRY",
       "path": "docs/decisions/ADR-0021-NO-TELEMETRY.md",
       "title": "ADR-0021 \u2014 No telemetry by default",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0022-MULTI-MONITOR-SURFACE",
+      "path": "docs/decisions/ADR-0022-MULTI-MONITOR-SURFACE.md",
+      "title": "ADR-0022 \u2014 Superf\u00EDcie \u00FAnica para m\u00FAltiplos monitores",
       "type": "document",
       "visibility": "internal"
     },

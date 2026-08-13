@@ -47,7 +47,7 @@ sudo apt install ./tv-shell_*.deb
 The package declares `pkexec` and `polkitd` with a fallback to Debian's older
 `policykit-1` transitional package.
 
-Depois, encerre a sessão atual, selecione `TV Shell` no menu de sessões da
+Depois, encerre a sessão atual, selecione `Calm TV` no menu de sessões da
 tela de login e entre normalmente. Para voltar, selecione o desktop anterior
 no mesmo menu. A instalação não troca o display manager nem altera a sessão
 padrão.
@@ -70,6 +70,17 @@ Antes do primeiro teste no notebook, execute no próprio Debian:
 cat build/target-preflight/environment.txt
 cat build/target-preflight/boot.txt
 ```
+
+Em uma configuração com dois monitores, a sessão usa o monitor primário e não
+atravessa as duas telas. Para testar explicitamente o segundo monitor:
+
+```bash
+TV_SHELL_MONITOR=1 /usr/bin/tv-shell
+```
+
+`TV_SHELL_MONITOR` é um índice técnico para desenvolvimento; a seleção por
+nome do monitor será exposta nas Quick Settings quando o adapter de display
+estiver conectado à UI.
 
 Esse relatório registra o hardware e as dependências sem instalar ou alterar
 serviços.

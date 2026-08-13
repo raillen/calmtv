@@ -1,6 +1,6 @@
 # Explanation — Why Apps Do Not Stay Open
 
-TV Shell treats 2 GB RAM as a hard product constraint. The default policy allows one heavy foreground app plus a small number of explicitly permitted background tasks such as downloads or audio.
+Calm TV treats 2 GB RAM as a hard product constraint. The default policy allows one heavy foreground app plus a small number of explicitly permitted background tasks such as downloads or audio.
 
 When switching apps, the current app may:
 1. save state;

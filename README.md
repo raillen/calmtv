@@ -1,12 +1,15 @@
-# TV Shell
+# Calm TV
 
-**TV Shell** is the engineering codename for an ultra-light Linux TV/media appliance designed for low-end x86-64 hardware, especially Atom/Celeron-class machines with 2 GB RAM.
+**Calm TV** is an ultra-light Linux TV/media appliance designed for low-end
+x86-64 hardware, especially Atom/Celeron-class machines with 2 GB RAM. The
+technical package and executable identifiers remain `tv-shell` for upgrade
+compatibility with the first Q4OS test packages.
 
 The product is not a conventional desktop environment. It is a remote-first TV shell over a minimal Debian base, with aggressive application lifecycle management, local/network media, IPTV, NanoTube integration, retro emulation, optional commercial streaming runtime and a constrained local smart organizer.
 
 ## Status
 
-- Product name: **pending**; `TV Shell` is a codename.
+- Product name: **Calm TV**.
 - Project Atlas: **v0.2**.
 - Current phase: **P01 — Shell Foundation**.
 - Active Goal: **P01-G01 — Boot to navigable TV Shell**.
@@ -33,7 +36,7 @@ runtime launchers. Boot time,
 idle PSS, input latency, VA-API and clean-image behavior remain measured
 evidence gates.
 
-The Debian package now exposes `TV Shell` as an additional display-manager
+The Debian package exposes `Calm TV` as an additional display-manager
 session, so it can be tested beside an existing desktop without replacing it.
 
 ## Start here

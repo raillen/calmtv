@@ -6,7 +6,7 @@ Create a Linux-based TV/media appliance that makes very old x86-64 hardware feel
 
 ## Product shape
 
-TV Shell is a **dedicated appliance shell**, not a general-purpose desktop environment:
+Calm TV is a **dedicated appliance shell**, not a general-purpose desktop environment:
 
 - Home and universal search.
 - NanoTube integration.

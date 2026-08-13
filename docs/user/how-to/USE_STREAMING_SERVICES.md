@@ -7,4 +7,4 @@ Commercial service tiles launch a restricted Firefox ESR session only when selec
 3. Use the service UI.
 4. Press Home/Exit to leave; the runtime process is terminated to return memory to the system.
 
-Playback quality, DRM availability and Linux browser support are controlled by each service and are not guaranteed by TV Shell. The project does not bypass service restrictions.
+Playback quality, DRM availability and Linux browser support are controlled by each service and are not guaranteed by Calm TV. The project does not bypass service restrictions.

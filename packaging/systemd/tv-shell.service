@@ -1,5 +1,5 @@
 [Unit]
-Description=TV Shell graphical session
+Description=Calm TV graphical session
 After=graphical-session-pre.target dbus.service
 PartOf=graphical-session.target
 

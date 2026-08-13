@@ -1,11 +1,11 @@
 # Current Project State
 
-- Project: **TV Shell** (engineering codename; commercial name pending)
+- Project: **Calm TV** (technical package/runtime identifier: `tv-shell`)
 - Framework: **Project Atlas 0.2.0**
 - Current phase: **P01 — Shell Foundation**
 - Current goal: **P01-G01 — Boot to navigable TV Shell (EXECUTING)**
 - Context methodology: **Lean Progressive Context (LPC)**
-- Last updated: `2026-08-13T16:19:09-03:00`
+- Last updated: `2026-08-13T17:46:18-03:00`
 
 ## Completed foundation
 
@@ -19,6 +19,11 @@ boundaries. Host build, FTS5 tests, a real mpv IPC smoke and a windowed GTK smok
 pass. The remaining P01 gates are a clean image, Matchbox runtime inventory and
 measured reference hardware/VM evidence. Do not mark P01 complete from host
 compilation alone.
+
+The Q4OS Atom notebook has now launched the navigable development shell. A
+dual-monitor fullscreen defect was reproduced there and fixed by targeting one
+GDK monitor at a time; complete MVP flows and performance measurements remain
+pending.
 
 P02, P03 and P04 have been reconciled to `docs/product/SCOPE.md` and are executing
 compatible host work while the external image/hardware gates remain pending. Their

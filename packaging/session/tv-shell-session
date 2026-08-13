@@ -11,11 +11,11 @@ cleanup() {
 trap cleanup EXIT INT TERM
 
 if ! command -v matchbox-window-manager >/dev/null 2>&1; then
-	echo "Matchbox is required for the TV Shell session" >&2
+		echo "Matchbox é necessário para a sessão Calm TV" >&2
 	exit 127
 fi
 if [ ! -x /usr/lib/tv-shell/tv-shell-launcher ]; then
-	echo "TV Shell launcher is not installed" >&2
+		echo "O launcher do Calm TV não está instalado" >&2
 	exit 127
 fi
 

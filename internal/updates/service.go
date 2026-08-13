@@ -17,7 +17,7 @@ func NewService(runner Runner) Service { return Service{runner: runner} }
 // Shell never calls sudo and never accepts arbitrary package names from UI.
 func (s Service) Update(ctx context.Context) error {
 	if err := s.runner.Run(ctx, "tv-shell-update"); err != nil {
-		return fmt.Errorf("update TV Shell: %w", err)
+		return fmt.Errorf("atualizar Calm TV: %w", err)
 	}
 	return nil
 }

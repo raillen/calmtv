@@ -1,5 +1,5 @@
 [Unit]
-Description=TV Shell recoverable startup diagnostic
+Description=Calm TV recoverable startup diagnostic
 
 [Service]
 Type=oneshot

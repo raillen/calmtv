@@ -4,7 +4,7 @@
 
 The first product milestone includes:
 
-- Debian amd64 image that boots into TV Shell.
+- Debian amd64 image that boots into Calm TV.
 - Xorg + Matchbox + GTK3 Home.
 - D-pad/keyboard navigation and focus framework.
 - AppManager/cgroups resource lifecycle.

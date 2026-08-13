@@ -20,3 +20,11 @@ Human language categories: Network, Bluetooth, Audio, Display, Controls, Storage
 
 ## Diagnostics
 Readable pass/warn/fail cards with exportable technical detail.
+
+## Display surface
+
+Calm TV renders one navigable surface at a time. The default target is the
+primary monitor, and the shell must never stretch the Home across an extended
+X11 desktop. A future Display setting may select one output, mirror the same
+surface, or expose a read-only companion surface; none of those modes may
+create an independent remote focus graph.

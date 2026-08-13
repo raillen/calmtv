@@ -1,5 +1,5 @@
 [Unit]
-Description=TV Shell recovery marker watcher
+Description=Calm TV recovery marker watcher
 
 [Path]
 PathExists=%t/tv-shell/failures

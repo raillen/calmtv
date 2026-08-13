@@ -32,10 +32,10 @@ The reproducible first pass is:
 ./scripts/target-preflight build/target-preflight
 ```
 
-Then select the `TV Shell` session at login, run the smoke flow, and preserve
+Then select the `Calm TV` session at login, run the smoke flow, and preserve
 the generated environment and boot files with the test evidence.
 
-With TV Shell selected, run:
+With Calm TV selected, run:
 
 ```bash
 ./scripts/target-session-check build/target-session-check
@@ -45,4 +45,9 @@ cat build/target-session-check/session.txt
 The check confirms Xorg, Matchbox and the Shell are alive and fails if a known
 resident compositor is detected.
 
-If Debian does not support a device, TV Shell does not maintain a private driver fork in V1.
+Com dois monitores ativos, confirme que a janela ocupa somente o monitor
+primário, que o outro não recebe uma segunda cópia da interface e que o foco
+continua navegável pelo teclado/controle. Teste também a ausência do monitor
+primário e registre o fallback para o monitor disponível.
+
+If Debian does not support a device, Calm TV does not maintain a private driver fork in V1.

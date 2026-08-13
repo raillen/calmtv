@@ -23,3 +23,4 @@ Accepted ADRs are authoritative after explicit project/user decisions and outran
 - [ADR-0019 Provider/torrent isolation and content boundary](ADR-0019-PROVIDERS-TORRENT.md)
 - [ADR-0020 Package-based MVP updates](ADR-0020-UPDATES.md)
 - [ADR-0021 No telemetry by default](ADR-0021-NO-TELEMETRY.md)
+- [ADR-0022 Single surface for multiple monitors](ADR-0022-MULTI-MONITOR-SURFACE.md)

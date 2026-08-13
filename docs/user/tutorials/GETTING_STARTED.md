@@ -2,12 +2,12 @@
 
 > This describes the intended V1 product flow. The current checkout provides the development shell; installer labels remain provisional until image validation.
 
-On an existing Debian amd64 installation, TV Shell can be installed as an
+On an existing Debian amd64 installation, Calm TV can be installed as an
 additional login session. It does not replace the current desktop. Install
-the `.deb`, choose `TV Shell` in the display manager's session menu, and
+the `.deb`, choose `Calm TV` in the display manager's session menu, and
 choose the original desktop there to return.
 
-1. Boot the installation image and install TV Shell to the target amd64 machine.
+1. Boot the installation image and install Calm TV to the target amd64 machine.
 2. First boot enters the setup flow rather than a conventional Linux desktop.
 3. Select display/resolution if automatic selection is unsuitable.
 4. Connect network if needed.

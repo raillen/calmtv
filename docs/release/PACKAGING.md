@@ -17,7 +17,7 @@ with Q4OS releases based on different Debian versions.
 The package also installs an optional display-manager session at
 `/usr/share/xsessions/tv-shell.desktop`. Selecting it starts
 `/usr/bin/tv-shell-session`, which owns the Matchbox process and returns to the
-display manager when TV Shell exits. The existing desktop session remains the
+display manager when Calm TV exits. The existing desktop session remains the
 default and is not replaced. The user service is installed but intentionally
 not enabled automatically; the selected display-manager session owns startup
 to prevent duplicate Shell processes.

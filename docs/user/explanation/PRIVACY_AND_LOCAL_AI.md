@@ -1,6 +1,6 @@
 # Explanation — Privacy and Local AI
 
-TV Shell has no telemetry by default.
+Calm TV has no telemetry by default.
 
 The Smart Organizer uses deterministic local evidence before AI. When the optional local model is used:
 - it is loaded on demand;

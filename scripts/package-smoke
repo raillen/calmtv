@@ -25,6 +25,9 @@ if grep -qE '^Depends:.*[()]' packaging/debian/control; then
 	exit 1
 fi
 grep -q '^Exec=/usr/bin/tv-shell-session$' packaging/session/tv-shell.desktop
+grep -q '^Name=Calm TV$' packaging/session/tv-shell.desktop
+grep -q 'calm-tv-window' internal/shell/assets/home.ui
+grep -q 'FullscreenOnMonitor' internal/shell/monitor.go
 grep -q 'matchbox-window-manager' packaging/session/tv-shell-session
 test -x packaging/session/tv-shell-session
 test -f packaging/session/tv-shell.desktop
