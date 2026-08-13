@@ -1,0 +1,25 @@
+#!/bin/sh
+set -eu
+
+if ! command -v dpkg-buildpackage >/dev/null 2>&1; then
+	echo "dpkg-dev/debhelper are required to build the Debian package" >&2
+	exit 127
+fi
+
+if [ -e debian ] || [ -L debian ]; then
+	echo "a debian/ build path already exists; use a clean package workspace" >&2
+	exit 1
+fi
+
+mkdir -p build/apt
+ln -s packaging/debian debian
+cleanup() { rm -f debian; }
+trap cleanup EXIT INT TERM
+dpkg-buildpackage -us -uc -b
+
+for package in ../tv-shell_*.deb; do
+	if [ -f "$package" ]; then
+		mv "$package" build/apt/
+	fi
+done
+printf '%s\n' "Debian package staged under build/apt"

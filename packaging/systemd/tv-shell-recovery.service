@@ -1,0 +1,8 @@
+[Unit]
+Description=TV Shell recoverable startup diagnostic
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/logger -t tv-shell "Shell restart limit reached; recovery mode will reset transient UI state"
+NoNewPrivileges=yes
+PrivateTmp=yes

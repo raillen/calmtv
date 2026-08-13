@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+
+if [ "$(id -u)" -eq 0 ]; then
+	apt-get update
+	apt-get install --only-upgrade -y tv-shell
+	exit 0
+fi
+
+if [ -x /usr/lib/tv-shell/tv-shell-update ] && [ "/usr/lib/tv-shell/tv-shell-update" != "$0" ]; then
+	exec pkexec /usr/lib/tv-shell/tv-shell-update
+fi
+
+echo "tv-shell-update requires the packaged PolicyKit helper or root" >&2
+exit 127

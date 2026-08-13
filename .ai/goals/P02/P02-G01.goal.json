@@ -1,0 +1,70 @@
+{
+  "id": "P02-G01",
+  "title": "System integration layer",
+  "phase": "P02",
+  "state": "EXECUTING",
+  "objective": "Deliver AppManager resource lifecycle, zram configuration, Linux service adapters and a remote-navigable Quick Settings surface.",
+  "constraints": [
+    "The UI never invokes NetworkManager, BlueZ, wpctl, xrandr, UDisks2 or logind directly.",
+    "Default policy allows one heavy foreground app plus explicitly permitted background work.",
+    "No sudo invocation is exposed as a generic UI escape hatch."
+  ],
+  "non_goals": [
+    "Media playback implementation",
+    "RetroArch integration",
+    "Smart Organizer and local AI"
+  ],
+  "acceptance": [
+    "NetworkManager, BlueZ, wpctl/WirePlumber, xrandr, UDisks2 and logind are reachable only through project adapter contracts.",
+    "Quick Settings can complete common Wi-Fi, Bluetooth, audio, display and power tasks by remote.",
+    "Adapters expose recoverable user-level errors instead of raw service/CLI errors.",
+    "Hardware integration tests cover at least the primary reference machine.",
+    "AppManager applies MemoryHigh, MemoryMax, CPUWeight and IOWeight through systemd/cgroups v2.",
+    "zram is configurable and its active state is visible to diagnostics."
+  ],
+  "gates": {
+    "build": "required",
+    "tests": "required",
+    "review": "required",
+    "documentation_impact": "required",
+    "project_intelligence": "required"
+  },
+  "context": {
+    "budget_profile": "medium",
+    "max_delegation_depth": 1
+  },
+  "dependencies": [
+    "P01-G01"
+  ],
+  "evidence": [
+    ".atlas/history/evidence/P02-G01-host-validation.md"
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T15:47:00Z",
+      "event": "created",
+      "state": "DRAFT"
+    },
+    {
+      "at": "2026-08-13T15:47:00Z",
+      "event": "state-transition",
+      "from": "DRAFT",
+      "to": "PLANNED",
+      "reason": "Roadmap outcome defined; acceptance may be amended before LOCKED."
+    },
+    {
+      "at": "2026-08-13T14:18:00Z",
+      "event": "state-transition",
+      "from": "PLANNED",
+      "to": "LOCKED",
+      "reason": "P02 scope reconciled with the canonical MVP and adapter contracts are ready."
+    },
+    {
+      "at": "2026-08-13T14:20:00Z",
+      "event": "state-transition",
+      "from": "LOCKED",
+      "to": "EXECUTING",
+      "reason": "Host implementation proceeds while the P01 image gate is externally pending."
+    }
+  ]
+}

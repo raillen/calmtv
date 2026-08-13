@@ -1,0 +1,45 @@
+{
+  "id": "P06-G01",
+  "title": "Hardening and release candidate",
+  "phase": "P06",
+  "state": "PLANNED",
+  "objective": "Produce a reproducible, recoverable and benchmarked release candidate for the supported hardware matrix.",
+  "constraints": [],
+  "non_goals": [],
+  "acceptance": [
+    "Debian image and packages build reproducibly from a clean environment.",
+    "AppArmor/systemd sandbox profiles cover high-risk processes.",
+    "Performance and stability gates pass on the minimum supported reference machine.",
+    "Update, rollback/recovery, diagnostics and support procedures are exercised.",
+    "Release artifacts, checksums, compatibility notes and user documentation are complete."
+  ],
+  "gates": {
+    "build": "required",
+    "tests": "required",
+    "review": "required",
+    "documentation_impact": "required",
+    "project_intelligence": "required"
+  },
+  "context": {
+    "budget_profile": "medium",
+    "max_delegation_depth": 1
+  },
+  "dependencies": [
+    "P05-G01"
+  ],
+  "evidence": [],
+  "history": [
+    {
+      "at": "2026-08-13T15:47:00Z",
+      "event": "created",
+      "state": "DRAFT"
+    },
+    {
+      "at": "2026-08-13T15:47:00Z",
+      "event": "state-transition",
+      "from": "DRAFT",
+      "to": "PLANNED",
+      "reason": "Roadmap outcome defined; acceptance may be amended before LOCKED."
+    }
+  ]
+}

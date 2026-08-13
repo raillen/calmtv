@@ -1,0 +1,40 @@
+#!/bin/sh
+set -eu
+
+if [ -z "${DISPLAY:-}" ]; then
+	echo "DISPLAY is required for GTK navigation smoke" >&2
+	exit 127
+fi
+if ! command -v xdotool >/dev/null 2>&1; then
+	echo "xdotool is required for GTK navigation smoke" >&2
+	exit 127
+fi
+
+binary=${TV_SHELL_BINARY:-build/tv-shell}
+if [ ! -x "$binary" ]; then
+	echo "shell binary not found: $binary" >&2
+	exit 1
+fi
+
+log_file=$(mktemp)
+cleanup() {
+	if [ -n "${shell_pid:-}" ]; then
+		kill "$shell_pid" 2>/dev/null || true
+		wait "$shell_pid" 2>/dev/null || true
+	fi
+	rm -f "$log_file"
+}
+trap cleanup EXIT INT TERM
+
+TV_SHELL_WINDOWED=1 "$binary" >"$log_file" 2>&1 &
+shell_pid=$!
+sleep 1
+window_id=$(xdotool search --name 'TV Shell' | head -1)
+xdotool windowactivate "$window_id"
+xdotool key Down Down Return Right Down Return Home
+sleep 1
+if grep -Eq 'CRITICAL|Segmentation' "$log_file"; then
+	cat "$log_file" >&2
+	exit 1
+fi
+printf '%s\n' 'GTK D-pad navigation smoke: PASS'

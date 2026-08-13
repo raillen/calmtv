@@ -1,0 +1,5 @@
+tv-shell (0.1.0-1) unstable; urgency=low
+
+  * Initial MVP implementation.
+
+ -- TV Shell maintainers <maintainers@example.invalid>  Thu, 13 Aug 2026 16:30:00 -0300

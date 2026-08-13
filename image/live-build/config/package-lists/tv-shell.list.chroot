@@ -1,0 +1,11 @@
+dbus
+gtk3
+matchbox-window-manager
+mpv
+network-manager
+pipewire
+pipewire-pulse
+wireplumber
+x11-xserver-utils
+xserver-xorg
+xserver-xorg-video-all

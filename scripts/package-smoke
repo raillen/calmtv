@@ -1,0 +1,30 @@
+#!/bin/sh
+set -eu
+
+required_files='packaging/debian/control packaging/debian/rules packaging/debian/install packaging/debian/source/format packaging/systemd/tv-shell.service packaging/systemd/tv-shell-zram.service packaging/xorg/10-tv-shell.conf packaging/matchbox/session packaging/polkit/org.calmtv.tv-shell-update.policy packaging/session/tv-shell-session packaging/session/tv-shell.desktop'
+for file in $required_files; do
+	if [ ! -f "$file" ]; then
+		echo "missing packaging file: $file" >&2
+		exit 1
+	fi
+done
+
+grep -q '^Architecture: amd64$' packaging/debian/control
+grep -q 'sqlite_fts5' packaging/debian/rules
+grep -q 'ProtectSystem=strict' packaging/systemd/tv-shell.service
+grep -q 'ReadWritePaths=.*\.local/share/tv-shell' packaging/systemd/tv-shell.service
+if grep -q '^WantedBy=graphical-session.target' packaging/systemd/tv-shell.service; then
+	echo 'tv-shell.service must not auto-start beside another desktop' >&2
+	exit 1
+fi
+grep -q 'org.freedesktop.policykit.exec.path' packaging/polkit/org.calmtv.tv-shell-update.policy
+grep -q '^Exec=/usr/bin/tv-shell-session$' packaging/session/tv-shell.desktop
+grep -q 'matchbox-window-manager' packaging/session/tv-shell-session
+test -x packaging/session/tv-shell-session
+test -f packaging/session/tv-shell.desktop
+if command -v desktop-file-validate >/dev/null 2>&1; then
+	desktop-file-validate packaging/session/tv-shell.desktop
+fi
+sh -n scripts/target-preflight scripts/target-session-check
+sh -n scripts/build-deb-portable
+printf '%s\n' 'Debian packaging metadata smoke: PASS'

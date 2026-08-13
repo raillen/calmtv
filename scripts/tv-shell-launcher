@@ -1,0 +1,32 @@
+#!/bin/sh
+set -eu
+
+state_dir="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/tv-shell"
+failure_file="$state_dir/failures"
+mkdir -p "$state_dir"
+
+failures=0
+if [ -f "$failure_file" ]; then
+	read -r failures < "$failure_file" || failures=0
+fi
+
+if [ "$failures" -ge 3 ]; then
+	# A failed UI configuration must not create an infinite blank restart loop.
+	rm -f "$failure_file"
+	export TV_SHELL_RECOVERY=1
+	printf '%s\n' "TV Shell iniciou em modo de recuperação; configurações temporárias foram ignoradas." >&2
+else
+	export TV_SHELL_RECOVERY=0
+fi
+
+set +e
+/usr/bin/tv-shell "$@"
+status=$?
+set -e
+
+if [ "$status" -ne 0 ]; then
+	printf '%s\n' $((failures + 1)) > "$failure_file"
+else
+	rm -f "$failure_file"
+fi
+exit "$status"

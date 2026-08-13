@@ -1,0 +1,14 @@
+# GENERATED COMPATIBILITY VIEW — canonical project state lives in atlas.json.
+# This projection exists only for older Atlas CLI builds that still probe YAML.
+version: 2
+project:
+  name: TV Shell
+  type:
+    - desktop
+    - linux-appliance
+    - media-center
+documentation:
+  entrypoint: docs/ATLAS.md
+  canonical_format: markdown
+machine_contract_format: json
+yaml_status: legacy-read-only

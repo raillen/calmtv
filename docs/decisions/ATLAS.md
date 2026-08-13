@@ -1,0 +1,25 @@
+# Architecture Decision Records
+
+Accepted ADRs are authoritative after explicit project/user decisions and outrank framework defaults for this project.
+
+- [ADR-0001 Debian 13 minimal base](ADR-0001-DEBIAN-13-MINIMAL.md)
+- [ADR-0002 amd64-only V1](ADR-0002-AMD64-V1.md)
+- [ADR-0003 Xorg + Matchbox / no compositor](ADR-0003-XORG-MATCHBOX.md)
+- [ADR-0004 Go + GTK3](ADR-0004-GO-GTK3.md)
+- [ADR-0005 Modular shell + adapters + subprocesses](ADR-0005-MODULAR-SUBPROCESSES.md)
+- [ADR-0006 AppManager + systemd/cgroups](ADR-0006-APP-MANAGER-CGROUPS.md)
+- [ADR-0007 mpv JSON IPC V1](ADR-0007-MPV-JSON-IPC.md)
+- [ADR-0008 SQLite + FTS5 runtime state](ADR-0008-SQLITE-FTS5.md)
+- [ADR-0009 System-service adapters](ADR-0009-SYSTEM-ADAPTERS.md)
+- [ADR-0010 MPRIS global media controls](ADR-0010-MPRIS.md)
+- [ADR-0011 RetroArch/Libretro on demand](ADR-0011-RETROARCH.md)
+- [ADR-0012 Firefox ESR streaming runtime](ADR-0012-FIREFOX-STREAMING-RUNTIME.md)
+- [ADR-0013 Generic browser optional](ADR-0013-BROWSER-OPTIONAL.md)
+- [ADR-0014 Deterministic-first Smart Organizer](ADR-0014-SMART-ORGANIZER.md)
+- [ADR-0015 AppArmor + systemd hardening](ADR-0015-SANDBOX.md)
+- [ADR-0016 One heavy foreground app](ADR-0016-FOREGROUND-POLICY.md)
+- [ADR-0017 Calm TV UI + central focus](ADR-0017-CALM-TV-UI.md)
+- [ADR-0018 IPTV Extended M3U + XMLTV](ADR-0018-IPTV-XMLTV.md)
+- [ADR-0019 Provider/torrent isolation and content boundary](ADR-0019-PROVIDERS-TORRENT.md)
+- [ADR-0020 Package-based MVP updates](ADR-0020-UPDATES.md)
+- [ADR-0021 No telemetry by default](ADR-0021-NO-TELEMETRY.md)

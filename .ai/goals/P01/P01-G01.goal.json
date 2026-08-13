@@ -1,0 +1,76 @@
+{
+  "id": "P01-G01",
+  "title": "Boot to navigable TV Shell",
+  "phase": "P01",
+  "state": "EXECUTING",
+  "objective": "Boot a minimal Debian amd64 image into the remote-first GTK3 shell with stable input and measured idle behavior.",
+  "constraints": [
+    "amd64 only for V1.",
+    "Debian stock kernel/firmware; no custom drivers.",
+    "No media applications beyond fixtures required to validate shell navigation.",
+    "Resource budgets are gates only after first hardware baseline; proposed values are not assumed measurements."
+  ],
+  "non_goals": [
+    "IPTV playback",
+    "Torrent streaming",
+    "RetroArch integration",
+    "Commercial streaming runtime",
+    "Smart Organizer"
+  ],
+  "acceptance": [
+    "Clean image boots through systemd into the dedicated user session without a conventional desktop environment.",
+    "Xorg + Matchbox + GTK3 shell render Home at 720p and 1080p.",
+    "Arrow/D-pad, Enter/OK, Back and Home actions navigate every P01 screen without mouse dependency.",
+    "Focus never becomes trapped or invisible.",
+    "No compositor is resident.",
+    "Cold boot, shell startup, idle PSS and D-pad p95 are measured on the reference low-end machine and stored as evidence.",
+    "Failure to start the shell produces a recoverable path rather than a blank loop."
+  ],
+  "gates": {
+    "build": "required",
+    "tests": "required",
+    "review": "required",
+    "documentation_impact": "required",
+    "project_intelligence": "required"
+  },
+  "context": {
+    "budget_profile": "medium",
+    "max_delegation_depth": 1
+  },
+  "dependencies": [
+    "P00-G01"
+  ],
+  "evidence": [
+    ".atlas/history/evidence/P01-G01-host-validation.md",
+    "build/tv-shell",
+    "build/evidence-shell/environment.txt"
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T15:00:00Z",
+      "event": "created",
+      "state": "DRAFT"
+    },
+    {
+      "at": "2026-08-13T15:10:00Z",
+      "event": "state-transition",
+      "from": "DRAFT",
+      "to": "PLANNED",
+      "reason": "Foundation roadmap approved."
+    },
+    {
+      "at": "2026-08-13T15:47:00Z",
+      "event": "state-transition",
+      "from": "PLANNED",
+      "to": "LOCKED",
+      "reason": "Documentation baseline completed; implementation may begin."
+    },
+    {
+      "at": "2026-08-13T16:30:00Z",
+      "event": "state-transition",
+      "from": "LOCKED",
+      "to": "EXECUTING",
+      "reason": "Shell implementation and verification started."
+    }
+  ]
+}

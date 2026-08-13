@@ -1,0 +1,29 @@
+# Project Atlas derived/runtime state
+.atlas/runtime/
+.atlas/cache/
+
+# Build outputs
+build/
+image/live-build/config/packages.chroot/
+out/
+*.deb
+*.iso
+dist/*
+!dist/
+!dist/*.deb
+!dist/*.sha256
+!dist/INSTALL-Q4OS.md
+
+# Go
+bin/
+coverage.out
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Editor / OS noise
+.idea/
+.vscode/
+.DS_Store

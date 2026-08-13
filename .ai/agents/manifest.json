@@ -1,0 +1,71 @@
+{
+  "generated_by": {
+    "project_atlas": "0.2.0"
+  },
+  "agents": [
+    "architect",
+    "database-engineer",
+    "debugger",
+    "design-researcher",
+    "devops-engineer",
+    "documentation-maintainer",
+    "explorer",
+    "implementer",
+    "performance-engineer",
+    "release-verifier",
+    "reviewer",
+    "security-reviewer",
+    "tester",
+    "ux-reviewer"
+  ],
+  "reasons": {
+    "architect": [
+      "core"
+    ],
+    "database-engineer": [
+      "skill-match"
+    ],
+    "debugger": [
+      "core"
+    ],
+    "design-researcher": [
+      "skill-match"
+    ],
+    "devops-engineer": [
+      "skill-match"
+    ],
+    "documentation-maintainer": [
+      "core"
+    ],
+    "explorer": [
+      "core"
+    ],
+    "implementer": [
+      "core"
+    ],
+    "performance-engineer": [
+      "bundle:desktop",
+      "risk",
+      "skill-match"
+    ],
+    "release-verifier": [
+      "bundle:desktop",
+      "core"
+    ],
+    "reviewer": [
+      "core"
+    ],
+    "security-reviewer": [
+      "bundle:desktop",
+      "risk",
+      "skill-match"
+    ],
+    "tester": [
+      "core"
+    ],
+    "ux-reviewer": [
+      "feature",
+      "skill-match"
+    ]
+  }
+}

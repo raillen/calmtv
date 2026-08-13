@@ -1,0 +1,73 @@
+{
+  "id": "P04-G01",
+  "title": "MVP closure: games, streaming runtime, diagnostics and recovery",
+  "phase": "P04",
+  "state": "EXECUTING",
+  "objective": "Close the usable MVP with on-demand RetroArch, optional Firefox ESR kiosk runtime, diagnostics, recovery and Debian package/update flow.",
+  "constraints": [
+    "RetroArch launches only on demand and returns to the Shell cleanly.",
+    "Commercial streaming uses official browser/runtime capabilities only; no DRM bypass is promised.",
+    "High-risk helpers remain isolated and cannot execute arbitrary Shell commands."
+  ],
+  "non_goals": [
+    "Torrent streaming and providers",
+    "Phone remote and HDMI-CEC",
+    "Smart Organizer, llama.cpp and local AI",
+    "4K and additional emulator systems outside the selected baseline"
+  ],
+  "acceptance": [
+    "RetroArch launches supported 8/16-bit systems on demand and returns cleanly to Home.",
+    "ROM library classification uses deterministic extension/hash/database logic before any AI.",
+    "Provider processes are isolated and cannot execute arbitrary shell through the Shell process.",
+    "Firefox ESR streaming runtime launches per-service kiosk sessions on demand and terminates on exit.",
+    "A generic browser is not required by the default image.",
+    "Diagnostics report CPU, RAM, zram, disk, network, Wi-Fi, Bluetooth, PipeWire, display, VA-API, mpv, input, systemd services and cgroups.",
+    "Recovery supports restart Shell, reset UI configuration, diagnostics, update recovery when available, reboot and power off.",
+    "The Debian package and controlled APT configuration can be built and smoke-tested from a clean environment."
+  ],
+  "gates": {
+    "build": "required",
+    "tests": "required",
+    "review": "required",
+    "documentation_impact": "required",
+    "project_intelligence": "required"
+  },
+  "context": {
+    "budget_profile": "medium",
+    "max_delegation_depth": 1
+  },
+  "dependencies": [
+    "P03-G01"
+  ],
+  "evidence": [
+    ".atlas/history/evidence/P04-G01-host-validation.md"
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T15:47:00Z",
+      "event": "created",
+      "state": "DRAFT"
+    },
+    {
+      "at": "2026-08-13T15:47:00Z",
+      "event": "state-transition",
+      "from": "DRAFT",
+      "to": "PLANNED",
+      "reason": "Roadmap outcome defined; acceptance may be amended before LOCKED."
+    },
+    {
+      "at": "2026-08-13T14:26:00Z",
+      "event": "state-transition",
+      "from": "PLANNED",
+      "to": "LOCKED",
+      "reason": "P04 reconciled to MVP closure; post-MVP features remain excluded."
+    },
+    {
+      "at": "2026-08-13T14:28:00Z",
+      "event": "state-transition",
+      "from": "LOCKED",
+      "to": "EXECUTING",
+      "reason": "Games, diagnostics, recovery and packaging closure proceed with host gates."
+    }
+  ]
+}

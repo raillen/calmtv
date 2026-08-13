@@ -1,0 +1,113 @@
+{
+  "generated_by": {
+    "project_atlas": "0.2.0"
+  },
+  "skills": [
+    "accessibility",
+    "atlas-navigation",
+    "benchmarking",
+    "ci-cd",
+    "code-review",
+    "database-review",
+    "documentation",
+    "documentation-for-llms",
+    "documentation-publishing",
+    "git-workflow",
+    "goal-management",
+    "lean-progressive-context",
+    "orchestration-multi-agent",
+    "performance-native",
+    "plugin-architecture",
+    "project-intelligence",
+    "release-engineering",
+    "security-desktop",
+    "security-supply-chain",
+    "ui-implementation",
+    "ui-ux-review",
+    "visual-regression",
+    "wireframe-styleguide"
+  ],
+  "reasons": {
+    "accessibility": [
+      "feature",
+      "risk-rule:accessibility-ui"
+    ],
+    "atlas-navigation": [
+      "core"
+    ],
+    "benchmarking": [
+      "risk-rule:performance-critical"
+    ],
+    "ci-cd": [
+      "feature",
+      "stack"
+    ],
+    "code-review": [
+      "core"
+    ],
+    "database-review": [
+      "feature",
+      "stack"
+    ],
+    "documentation": [
+      "core"
+    ],
+    "documentation-for-llms": [
+      "feature"
+    ],
+    "documentation-publishing": [
+      "feature"
+    ],
+    "git-workflow": [
+      "core"
+    ],
+    "goal-management": [
+      "core"
+    ],
+    "lean-progressive-context": [
+      "core",
+      "dependency:documentation-for-llms"
+    ],
+    "orchestration-multi-agent": [
+      "feature"
+    ],
+    "performance-native": [
+      "bundle:desktop",
+      "project-type",
+      "risk"
+    ],
+    "plugin-architecture": [
+      "feature"
+    ],
+    "project-intelligence": [
+      "core"
+    ],
+    "release-engineering": [
+      "bundle:desktop",
+      "feature",
+      "project-type"
+    ],
+    "security-desktop": [
+      "bundle:desktop",
+      "project-type",
+      "risk"
+    ],
+    "security-supply-chain": [
+      "feature",
+      "risk"
+    ],
+    "ui-implementation": [
+      "feature"
+    ],
+    "ui-ux-review": [
+      "feature"
+    ],
+    "visual-regression": [
+      "feature",
+      "risk-rule:accessibility-ui"
+    ],
+    "wireframe-styleguide": [
+      "feature"
+    ]
+  }
+}

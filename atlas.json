@@ -1,0 +1,252 @@
+{
+  "version": 2,
+  "framework": {
+    "name": "project-atlas-framework",
+    "version": "0.2.0",
+    "source_commit": "819a4c26a8af024c381b4abd0d96129616b0fcbf"
+  },
+  "project": {
+    "name": "TV Shell",
+    "type": [
+      "desktop",
+      "linux-appliance",
+      "media-center"
+    ],
+    "name_status": "engineering-codename",
+    "commercial_name": null,
+    "summary": "Ultra-light remote-first Linux TV/media appliance for modest x86-64 hardware."
+  },
+  "stack": {
+    "languages": [
+      "go",
+      "typescript",
+      "shell"
+    ],
+    "platform": [
+      "debian-13",
+      "linux",
+      "amd64",
+      "xorg",
+      "matchbox",
+      "systemd"
+    ],
+    "ui": [
+      "gtk3",
+      "gotk3",
+      "gtkbuilder",
+      "gtk-css"
+    ],
+    "system": [
+      "dbus",
+      "networkmanager",
+      "bluez",
+      "pipewire",
+      "wireplumber",
+      "udisks2",
+      "xrandr",
+      "apparmor"
+    ],
+    "media": [
+      "mpv",
+      "ffmpeg",
+      "mpris",
+      "retroarch",
+      "libretro",
+      "anacrolix-torrent"
+    ],
+    "data": [
+      "sqlite",
+      "fts5"
+    ],
+    "ai_runtime": [
+      "llama.cpp"
+    ],
+    "tooling": [
+      "github-actions",
+      "debootstrap",
+      "live-build"
+    ]
+  },
+  "features": [
+    "ui",
+    "accessibility",
+    "persistence",
+    "network-media",
+    "plugins",
+    "release",
+    "distribution",
+    "ci-cd",
+    "documentation",
+    "docs-site",
+    "ai-assisted-development",
+    "orchestration",
+    "design-system",
+    "wireframes",
+    "media-playback",
+    "iptv",
+    "emulation",
+    "local-ai",
+    "resource-management",
+    "remote-control",
+    "smart-organizer"
+  ],
+  "risk": [
+    "performance-critical",
+    "security",
+    "accessibility",
+    "supply-chain"
+  ],
+  "quality": {
+    "performance": "critical",
+    "accessibility": true,
+    "security": "high",
+    "hardware_target": {
+      "minimum_ram_mib": 2048,
+      "cpu_class": "Atom/Celeron-class x86-64",
+      "resolution_focus": [
+        "1280x720",
+        "1920x1080"
+      ]
+    },
+    "provisional_budgets": {
+      "idle_pss_target_mib": 250,
+      "idle_pss_hard_gate_mib": 350,
+      "dpad_response_p95_ms": 100,
+      "cold_boot_to_home_target_s": 20
+    }
+  },
+  "documentation": {
+    "entrypoint": "docs/ATLAS.md",
+    "canonical_format": "markdown",
+    "site": {
+      "enabled": true,
+      "source": "docs",
+      "generated": true,
+      "public_internal_views": true
+    },
+    "audiences": [
+      "user",
+      "developer",
+      "operations",
+      "agent"
+    ],
+    "virtual_chunking": true
+  },
+  "context": {
+    "methodology": "lean-progressive-context",
+    "architecture": "progressive-context-architecture",
+    "mode": "progressive",
+    "budget_profile": "medium",
+    "profiles": {
+      "small": {
+        "context_target_tokens": 3000,
+        "context_hard_tokens": 6000,
+        "output_target_tokens": 500,
+        "output_hard_tokens": 1000,
+        "max_expansion_rounds": 1,
+        "max_delegation_depth": 0
+      },
+      "medium": {
+        "context_target_tokens": 8000,
+        "context_hard_tokens": 16000,
+        "output_target_tokens": 1500,
+        "output_hard_tokens": 3000,
+        "max_expansion_rounds": 2,
+        "max_delegation_depth": 1
+      },
+      "large": {
+        "context_target_tokens": 16000,
+        "context_hard_tokens": 32000,
+        "output_target_tokens": 3000,
+        "output_hard_tokens": 6000,
+        "max_expansion_rounds": 3,
+        "max_delegation_depth": 1
+      }
+    },
+    "deep_recursion": {
+      "enabled": false,
+      "experimental": true
+    },
+    "runtime": {
+      "database": ".atlas/runtime/atlas.db",
+      "completed_context_ttl": "0d",
+      "failed_context_ttl": "7d"
+    }
+  },
+  "intelligence": {
+    "enabled": true,
+    "path": ".atlas/history/project-intelligence.json",
+    "task_reports": true,
+    "track_input_tokens": true,
+    "track_output_tokens": true,
+    "track_cost": true,
+    "distinguish_observed_estimated": true
+  },
+  "orchestration": {
+    "protocol": "POP",
+    "orchestrator": "native",
+    "autonomy": "agentic"
+  },
+  "goals": {
+    "active_phase": "P01",
+    "active_goal": "P01-G01"
+  },
+  "ai": {
+    "orchestrator": "native",
+    "autonomy": "agentic",
+    "preferred_models": [
+      {
+        "id": "openai/codex",
+        "provider": "openai",
+        "alias": true
+      },
+      {
+        "id": "anthropic/claude",
+        "provider": "anthropic",
+        "alias": true
+      },
+      {
+        "id": "google/gemini",
+        "provider": "google",
+        "alias": true
+      }
+    ],
+    "model_alias_policy": "Provider-family aliases are allowed in documentation bootstrap; pin exact executable model IDs before a Goal enters EXECUTING.",
+    "role_preferences": {
+      "architect": [
+        "openai/codex",
+        "anthropic/claude"
+      ],
+      "implementer": [
+        "openai/codex"
+      ],
+      "debugger": [
+        "openai/codex"
+      ],
+      "tester": [
+        "google/gemini",
+        "anthropic/claude"
+      ],
+      "reviewer": [
+        "anthropic/claude",
+        "google/gemini"
+      ],
+      "security-reviewer": [
+        "anthropic/claude",
+        "openai/codex"
+      ],
+      "release-verifier": [
+        "google/gemini",
+        "anthropic/claude"
+      ],
+      "documentation-maintainer": [
+        "google/gemini",
+        "anthropic/claude"
+      ],
+      "ux-reviewer": [
+        "google/gemini",
+        "anthropic/claude"
+      ]
+    }
+  }
+}

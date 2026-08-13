@@ -1,0 +1,11 @@
+[Unit]
+Description=TV Shell zram configuration check
+After=systemd-zram-setup@zram0.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sh -c 'test -e /sys/block/zram0 || logger -t tv-shell "zram0 unavailable"'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

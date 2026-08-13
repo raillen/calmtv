@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "updated_at": "2026-08-13T19:19:09Z",
+  "summary": {
+    "tasks": 5,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cached_tokens": 0,
+    "intermediate_output_tokens": 0,
+    "direct_cost": 0.0
+  },
+  "tasks": [
+    {
+      "id": "P00-DOC-BOOTSTRAP",
+      "type": "documentation-refactor",
+      "component": [
+        "documentation",
+        "project-atlas"
+      ],
+      "status": "success",
+      "risk": "medium",
+      "complexity": "large",
+      "strategy": "framework-source-aligned-reconstruction",
+      "tokens": {
+        "input": 0,
+        "output": 0,
+        "cached": 0,
+        "intermediate_output": 0
+      },
+      "cost": {
+        "direct": {
+          "amount": 0.0,
+          "currency": "USD",
+          "provenance": "unknown",
+          "confidence": "unknown"
+        }
+      },
+      "effort": {
+        "provenance": "unknown",
+        "note": "Artifact-generation effort not measured by the project runtime."
+      },
+      "tests": {
+        "atlas_required_files": "passed",
+        "json_parse": "passed",
+        "schema_validation": "passed",
+        "no_canonical_yaml": "passed",
+        "markdown_links": "passed"
+      },
+      "documentation": {
+        "delta": "full canonical baseline reconstruction",
+        "file_count": 158
+      },
+      "evidence": [
+        ".atlas/history/evidence/P00-G01-validation.md",
+        "docs/reference/ATLAS_ALIGNMENT.md"
+      ],
+      "models": [],
+      "started_at": "2026-08-13T14:00:00Z",
+      "finished_at": "2026-08-13T15:47:00Z"
+    },
+    {
+      "id": "P01-IMPLEMENTATION-SLICE",
+      "type": "feature-standard",
+      "component": ["shell", "input", "focus", "system-adapters", "media-boundaries", "packaging"],
+      "status": "partial",
+      "risk": "high",
+      "complexity": "large",
+      "strategy": "vertical-contracts-with-host-validation",
+      "tokens": {"input": 0, "output": 0, "cached": 0, "intermediate_output": 0},
+      "cost": {"direct": {"amount": 0.0, "currency": "USD", "provenance": "unknown", "confidence": "unknown"}},
+      "effort": {"provenance": "observed", "note": "Implementation and host validation performed in the current workspace."},
+      "tests": {"go_test_sqlite_fts5": "passed", "go_vet": "passed", "gtk_build": "passed", "gtk_windowed_smoke": "passed", "ui_navigation_smoke": "passed", "mpv_json_ipc": "passed", "desktop_session": "passed", "target_preflight": "passed-host-script", "image_build": "blocked-by-missing-tools", "hardware": "pending"},
+      "documentation": {"delta": "architecture, developer, user and release surfaces updated"},
+      "evidence": [".atlas/history/evidence/P01-G01-host-validation.md"],
+      "models": [],
+      "started_at": "2026-08-13T16:30:00Z",
+      "finished_at": "2026-08-13T17:16:13Z"
+    },
+    {
+      "id": "P02-SYSTEM-FOUNDATION",
+      "type": "feature-standard",
+      "component": ["appmanager", "system-adapters", "quick-settings", "zram"],
+      "status": "partial",
+      "risk": "high",
+      "complexity": "large",
+      "strategy": "contract-first-adapters",
+      "tokens": {"input": 0, "output": 0, "cached_tokens": 0, "intermediate_output": 0},
+      "cost": {"direct": {"amount": 0.0, "currency": "USD", "provenance": "unknown", "confidence": "unknown"}},
+      "effort": {"provenance": "observed", "note": "Host contracts and adapter tests completed; target services pending."},
+      "tests": {"appmanager": "passed", "adapters": "passed", "zram_config": "passed", "hardware_services": "pending"},
+      "documentation": {"delta": "system architecture, recovery, diagnostics and build docs updated"},
+      "evidence": [".atlas/history/evidence/P02-G01-host-validation.md"],
+      "models": [],
+      "started_at": "2026-08-13T14:20:00-03:00",
+      "finished_at": null
+    },
+    {
+      "id": "P03-MEDIA-FOUNDATION",
+      "type": "feature-standard",
+      "component": ["media", "state", "iptv", "library", "downloads", "nanotube"],
+      "status": "partial",
+      "risk": "high",
+      "complexity": "large",
+      "strategy": "shared-subprocess-and-streaming-parsers",
+      "tokens": {"input": 0, "output": 0, "cached_tokens": 0, "intermediate_output": 0},
+      "cost": {"direct": {"amount": 0.0, "currency": "USD", "provenance": "unknown", "confidence": "unknown"}},
+      "effort": {"provenance": "observed", "note": "Media contracts, SQLite/FTS5 migrations, parsers and host mpv smoke completed."},
+      "tests": {"go_test_sqlite_fts5": "passed", "mpv_ipc": "passed", "iptv_fixtures": "passed", "target_media": "pending"},
+      "documentation": {"delta": "media, IPTV, SQLite and user flow docs updated"},
+      "evidence": [".atlas/history/evidence/P03-G01-host-validation.md"],
+      "models": [],
+      "started_at": "2026-08-13T14:24:00-03:00",
+      "finished_at": null
+    },
+    {
+      "id": "P04-MVP-CLOSURE",
+      "type": "feature-standard",
+      "component": ["games", "web-runtime", "diagnostics", "recovery", "packaging"],
+      "status": "partial",
+      "risk": "high",
+      "complexity": "large",
+      "strategy": "on-demand-runtime-and-debian-packaging",
+      "tokens": {"input": 0, "output": 0, "cached_tokens": 0, "intermediate_output": 0},
+      "cost": {"direct": {"amount": 0.0, "currency": "USD", "provenance": "unknown", "confidence": "unknown"}},
+      "effort": {"provenance": "observed", "note": "Contracts, tests and packaging smoke completed; target binaries/package tools pending."},
+      "tests": {"games": "passed", "recovery": "passed", "diagnostics": "passed", "package_metadata": "passed", "package_metadata_smoke": "passed", "desktop_session_metadata": "passed", "debian_package": "pending"},
+      "documentation": {"delta": "roadmap, recovery, diagnostics, build and packaging docs updated"},
+      "evidence": [".atlas/history/evidence/P04-G01-host-validation.md"],
+      "models": [],
+      "started_at": "2026-08-13T14:28:00-03:00",
+      "finished_at": null
+    }
+  ],
+  "debt": [
+    {
+      "id": "D001",
+      "area": "model-policy",
+      "status": "open",
+      "description": "Provider-family aliases must be pinned to exact executable model IDs before P01-G01 enters EXECUTING.",
+      "provenance": "observed"
+    },
+    {
+      "id": "D002",
+      "area": "performance",
+      "status": "open",
+      "description": "RAM/boot/D-pad budgets are provisional until the reference hardware baseline is measured.",
+      "provenance": "observed"
+    },
+    {
+      "id": "D003",
+      "area": "atlas-tooling",
+      "status": "open",
+      "description": "Installed Atlas CLI goal validator still expects legacy YAML evidence; canonical JSON validation and evidence remain the source of truth until the compatible CLI is available.",
+      "provenance": "observed"
+    }
+  ]
+}

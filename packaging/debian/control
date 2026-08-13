@@ -1,0 +1,11 @@
+Source: tv-shell
+Section: misc
+Priority: optional
+Maintainer: TV Shell maintainers <maintainers@example.invalid>
+Standards-Version: 4.7.0
+Build-Depends: debhelper-compat (= 13), golang-any, libgtk-3-dev
+Package: tv-shell
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, dbus, libgtk-3-0, matchbox-window-manager, xserver-xorg, systemd-zram-generator, policykit-1
+Description: remote-first TV shell for low-end Debian systems
+ Ultra-light GTK3 TV shell with central keyboard/D-pad navigation.

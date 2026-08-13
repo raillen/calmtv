@@ -1,0 +1,46 @@
+{
+  "generated_by": {
+    "project_atlas": "0.2.0"
+  },
+  "recipes": [
+    "architecture-change",
+    "bug-fix",
+    "documentation-refactor",
+    "feature-standard",
+    "project-bootstrap",
+    "release",
+    "security-review",
+    "ui-review"
+  ],
+  "reasons": {
+    "architecture-change": [
+      "core"
+    ],
+    "bug-fix": [
+      "core"
+    ],
+    "documentation-refactor": [
+      "feature",
+      "skill-match"
+    ],
+    "feature-standard": [
+      "bundle:desktop",
+      "core"
+    ],
+    "project-bootstrap": [
+      "core"
+    ],
+    "release": [
+      "bundle:desktop",
+      "core"
+    ],
+    "security-review": [
+      "risk",
+      "skill-match"
+    ],
+    "ui-review": [
+      "feature",
+      "skill-match"
+    ]
+  }
+}

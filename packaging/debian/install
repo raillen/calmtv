@@ -1,0 +1,13 @@
+scripts/tv-shell-launcher usr/lib/tv-shell
+scripts/measure-shell usr/lib/tv-shell
+scripts/tv-shell-update usr/lib/tv-shell
+packaging/systemd/tv-shell.service usr/lib/systemd/user
+packaging/systemd/tv-shell-recovery.path usr/lib/systemd/user
+packaging/systemd/tv-shell-recovery.service usr/lib/systemd/user
+packaging/systemd/tv-shell-zram.service usr/lib/systemd/system
+packaging/xorg/10-tv-shell.conf etc/X11/xorg.conf.d
+packaging/matchbox/session usr/share/tv-shell
+packaging/zram-generator.conf etc/systemd/zram-generator.conf.d
+packaging/polkit/org.calmtv.tv-shell-update.policy usr/share/polkit-1/actions
+packaging/session/tv-shell-session usr/bin
+packaging/session/tv-shell.desktop usr/share/xsessions

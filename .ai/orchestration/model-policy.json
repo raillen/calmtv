@@ -1,0 +1,109 @@
+{
+  "version": 2,
+  "selection_rule": "cheapest-reliable-model-that-passes-gates",
+  "cross_provider_review": true,
+  "context_aware_routing": true,
+  "roster": [
+    {
+      "id": "openai/codex",
+      "provider": "openai",
+      "alias": true,
+      "enabled": true
+    },
+    {
+      "id": "anthropic/claude",
+      "provider": "anthropic",
+      "alias": true,
+      "enabled": true
+    },
+    {
+      "id": "google/gemini",
+      "provider": "google",
+      "alias": true,
+      "enabled": true
+    }
+  ],
+  "roles": {
+    "architect": {
+      "preferred": [
+        "openai/codex",
+        "anthropic/claude"
+      ],
+      "fallback": [
+        "google/gemini"
+      ]
+    },
+    "debugger": {
+      "preferred": [
+        "openai/codex"
+      ],
+      "fallback": [
+        "anthropic/claude",
+        "google/gemini"
+      ]
+    },
+    "documentation-maintainer": {
+      "preferred": [
+        "google/gemini",
+        "anthropic/claude"
+      ],
+      "fallback": [
+        "openai/codex"
+      ]
+    },
+    "implementer": {
+      "preferred": [
+        "openai/codex"
+      ],
+      "fallback": [
+        "anthropic/claude",
+        "google/gemini"
+      ]
+    },
+    "release-verifier": {
+      "preferred": [
+        "google/gemini",
+        "anthropic/claude"
+      ],
+      "fallback": [
+        "openai/codex"
+      ]
+    },
+    "reviewer": {
+      "preferred": [
+        "anthropic/claude",
+        "google/gemini"
+      ],
+      "fallback": [
+        "openai/codex"
+      ]
+    },
+    "security-reviewer": {
+      "preferred": [
+        "anthropic/claude",
+        "openai/codex"
+      ],
+      "fallback": [
+        "google/gemini"
+      ]
+    },
+    "tester": {
+      "preferred": [
+        "google/gemini",
+        "anthropic/claude"
+      ],
+      "fallback": [
+        "openai/codex"
+      ]
+    },
+    "ux-reviewer": {
+      "preferred": [
+        "google/gemini",
+        "anthropic/claude"
+      ],
+      "fallback": [
+        "openai/codex"
+      ]
+    }
+  }
+}

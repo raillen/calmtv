@@ -1,0 +1,9 @@
+[Unit]
+Description=TV Shell recovery marker watcher
+
+[Path]
+PathExists=%t/tv-shell/failures
+Unit=tv-shell-recovery.service
+
+[Install]
+WantedBy=default.target

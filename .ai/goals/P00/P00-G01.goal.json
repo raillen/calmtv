@@ -1,0 +1,83 @@
+{
+  "id": "P00-G01",
+  "title": "Atlas v0.2 architecture and documentation baseline",
+  "phase": "P00",
+  "state": "DONE",
+  "objective": "Produce a Project Atlas v0.2-compliant canonical project baseline before implementation.",
+  "constraints": [],
+  "non_goals": [],
+  "acceptance": [
+    "Project validates against Atlas v0.2 required-file and JSON schema rules.",
+    "Canonical documentation uses Markdown and machine state uses JSON; no canonical YAML exists.",
+    "docs/ATLAS.md routes user, developer, operator and agent intents.",
+    "Architecture, UI/UX, security, testing, operations, support and release surfaces cover the approved product scope.",
+    "Major settled architecture choices are recorded as ADRs.",
+    "All local Markdown links resolve inside the package."
+  ],
+  "gates": {
+    "build": "passed-structural-validation",
+    "tests": "passed-structural-validation",
+    "review": "passed-documentation-review",
+    "documentation_impact": "passed-documentation-impact",
+    "project_intelligence": "passed-project-intelligence-record"
+  },
+  "context": {
+    "budget_profile": "medium",
+    "max_delegation_depth": 1
+  },
+  "dependencies": [],
+  "evidence": [
+    ".atlas/history/evidence/P00-G01-validation.md",
+    "docs/reference/ATLAS_ALIGNMENT.md",
+    "docs/ATLAS.md"
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T14:00:00Z",
+      "event": "created",
+      "state": "DRAFT"
+    },
+    {
+      "at": "2026-08-13T14:10:00Z",
+      "event": "state-transition",
+      "from": "DRAFT",
+      "to": "PLANNED",
+      "reason": "Scope reconstructed from current Project Atlas v0.2 source."
+    },
+    {
+      "at": "2026-08-13T14:20:00Z",
+      "event": "state-transition",
+      "from": "PLANNED",
+      "to": "LOCKED",
+      "reason": "Framework contract and project decisions reconciled."
+    },
+    {
+      "at": "2026-08-13T15:00:00Z",
+      "event": "state-transition",
+      "from": "LOCKED",
+      "to": "EXECUTING",
+      "reason": "Canonical package generation started."
+    },
+    {
+      "at": "2026-08-13T15:30:00Z",
+      "event": "state-transition",
+      "from": "EXECUTING",
+      "to": "VERIFYING",
+      "reason": "Project tree generated; structural validation started."
+    },
+    {
+      "at": "2026-08-13T15:40:00Z",
+      "event": "state-transition",
+      "from": "VERIFYING",
+      "to": "REVIEWING",
+      "reason": "Schema/link/format checks passed; consistency review performed."
+    },
+    {
+      "at": "2026-08-13T15:47:00Z",
+      "event": "state-transition",
+      "from": "REVIEWING",
+      "to": "DONE",
+      "reason": "Documentation/bootstrap baseline accepted as implementation-ready project state."
+    }
+  ]
+}

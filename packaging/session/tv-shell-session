@@ -1,0 +1,30 @@
+#!/bin/sh
+set -eu
+
+window_manager_pid=''
+cleanup() {
+	if [ -n "$window_manager_pid" ]; then
+		kill "$window_manager_pid" 2>/dev/null || true
+		wait "$window_manager_pid" 2>/dev/null || true
+	fi
+}
+trap cleanup EXIT INT TERM
+
+if ! command -v matchbox-window-manager >/dev/null 2>&1; then
+	echo "Matchbox is required for the TV Shell session" >&2
+	exit 127
+fi
+if [ ! -x /usr/lib/tv-shell/tv-shell-launcher ]; then
+	echo "TV Shell launcher is not installed" >&2
+	exit 127
+fi
+
+matchbox-window-manager -use_titlebar no -use_cursor no -use_desktop_mode plain &
+window_manager_pid=$!
+
+set +e
+/usr/lib/tv-shell/tv-shell-launcher "$@"
+shell_status=$?
+set -e
+
+exit "$shell_status"

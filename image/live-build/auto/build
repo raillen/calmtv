@@ -1,0 +1,20 @@
+#!/bin/sh
+set -eu
+
+if ! command -v lb >/dev/null 2>&1; then
+	echo "live-build is required to build the Debian image" >&2
+	exit 127
+fi
+
+package=$(find ../../build/apt -maxdepth 1 -type f -name 'tv-shell_*.deb' -print -quit 2>/dev/null || true)
+if [ -z "$package" ]; then
+	echo "build/apt/tv-shell_*.deb is required before building the image" >&2
+	exit 1
+fi
+
+mkdir -p config/packages.chroot
+package_copy=config/packages.chroot/tv-shell.deb
+cleanup() { rm -f "$package_copy"; }
+trap cleanup EXIT INT TERM
+cp "$package" "$package_copy"
+lb build

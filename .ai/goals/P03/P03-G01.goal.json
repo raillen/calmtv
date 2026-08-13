@@ -1,0 +1,70 @@
+{
+  "id": "P03-G01",
+  "title": "MediaCore and first-party playback",
+  "phase": "P03",
+  "state": "EXECUTING",
+  "objective": "Deliver the shared MediaCore, SQLite/FTS5 runtime state, local media, NanoTube integration, IPTV/EPG and the bounded file/download flows required by the MVP.",
+  "constraints": [
+    "mpv is a subprocess controlled through JSON IPC in V1.",
+    "XMLTV is parsed incrementally and never loaded as one in-memory document.",
+    "NanoTube-specific resolution/auth/catalog logic remains outside the Shell."
+  ],
+  "non_goals": [
+    "Torrent streaming providers",
+    "Advanced SMB/network library",
+    "Podcast/radio/music polish"
+  ],
+  "acceptance": [
+    "mpv JSON IPC backend supports play/pause/seek/tracks/volume/stop with cancellation and failure recovery.",
+    "SQLite/FTS5 stores history, favorites, library metadata and search without resident heavy indexers.",
+    "IPTV imports Extended M3U and XMLTV via streaming parse and launches channels through MediaCore.",
+    "Continue Watching works across at least local media and NanoTube integration.",
+    "File/download screens support Downloads, Videos, Music, Games, USB and progress without becoming a general desktop file manager.",
+    "SQLite migrations cover history, resume, favorites, metadata, channels and EPG."
+  ],
+  "gates": {
+    "build": "required",
+    "tests": "required",
+    "review": "required",
+    "documentation_impact": "required",
+    "project_intelligence": "required"
+  },
+  "context": {
+    "budget_profile": "medium",
+    "max_delegation_depth": 1
+  },
+  "dependencies": [
+    "P02-G01"
+  ],
+  "evidence": [
+    ".atlas/history/evidence/P03-G01-host-validation.md"
+  ],
+  "history": [
+    {
+      "at": "2026-08-13T15:47:00Z",
+      "event": "created",
+      "state": "DRAFT"
+    },
+    {
+      "at": "2026-08-13T15:47:00Z",
+      "event": "state-transition",
+      "from": "DRAFT",
+      "to": "PLANNED",
+      "reason": "Roadmap outcome defined; acceptance may be amended before LOCKED."
+    },
+    {
+      "at": "2026-08-13T14:22:00Z",
+      "event": "state-transition",
+      "from": "PLANNED",
+      "to": "LOCKED",
+      "reason": "P03 scope reconciled with the canonical MVP and MediaCore contracts are ready."
+    },
+    {
+      "at": "2026-08-13T14:24:00Z",
+      "event": "state-transition",
+      "from": "LOCKED",
+      "to": "EXECUTING",
+      "reason": "Playback, persistence and parser implementation proceeds with host fixtures."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# GENERATED COMPATIBILITY VIEW — canonical source: atlas.json and model-policy.json.
+version: 2
+yaml_status: legacy-read-only
+roles:
+  architect:
+    preferred:
+      - openai/codex
+      - anthropic/claude
+  implementer:
+    preferred:
+      - openai/codex
+  tester:
+    preferred:
+      - google/gemini
+      - anthropic/claude
+  reviewer:
+    preferred:
+      - anthropic/claude
+      - google/gemini

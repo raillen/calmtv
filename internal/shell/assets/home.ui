@@ -1,0 +1,84 @@
+<interface>
+  <object class="GtkWindow" id="main_window">
+    <property name="title">TV Shell</property>
+    <property name="name">tv-shell-window</property>
+    <property name="default-width">1280</property>
+    <property name="default-height">720</property>
+    <property name="resizable">True</property>
+    <child>
+      <object class="GtkBox" id="root_box">
+        <property name="orientation">vertical</property>
+        <property name="spacing">18</property>
+        <property name="margin-start">56</property>
+        <property name="margin-end">56</property>
+        <property name="margin-top">42</property>
+        <property name="margin-bottom">42</property>
+        <child>
+          <object class="GtkLabel" id="page_title">
+            <property name="label">TV Shell</property>
+            <property name="xalign">0</property>
+            <property name="name">page-title</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="page_hint">
+            <property name="label">Use as setas e Enter para navegar</property>
+            <property name="xalign">0</property>
+            <property name="name">page-hint</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkGrid" id="home_grid">
+            <property name="row-spacing">18</property>
+            <property name="column-spacing">18</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkButton" id="card-settings"><property name="label">Quick Settings</property><property name="hexpand">True</property><property name="vexpand">True</property><property name="can-focus">True</property></object>
+              <packing><property name="left-attach">0</property><property name="top-attach">0</property></packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="card-media"><property name="label">Mídia local</property><property name="hexpand">True</property><property name="vexpand">True</property><property name="can-focus">True</property></object>
+              <packing><property name="left-attach">1</property><property name="top-attach">0</property></packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="card-nanotube"><property name="label">NanoTube</property><property name="hexpand">True</property><property name="vexpand">True</property><property name="can-focus">True</property></object>
+              <packing><property name="left-attach">2</property><property name="top-attach">0</property></packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="card-iptv"><property name="label">IPTV</property><property name="hexpand">True</property><property name="vexpand">True</property><property name="can-focus">True</property></object>
+              <packing><property name="left-attach">3</property><property name="top-attach">0</property></packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="card-games"><property name="label">Jogos</property><property name="hexpand">True</property><property name="vexpand">True</property><property name="can-focus">True</property></object>
+              <packing><property name="left-attach">0</property><property name="top-attach">1</property></packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="card-files"><property name="label">Arquivos e downloads</property><property name="hexpand">True</property><property name="vexpand">True</property><property name="can-focus">True</property></object>
+              <packing><property name="left-attach">1</property><property name="top-attach">1</property></packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="card-diagnostics"><property name="label">Diagnóstico</property><property name="hexpand">True</property><property name="vexpand">True</property><property name="can-focus">True</property></object>
+              <packing><property name="left-attach">2</property><property name="top-attach">1</property></packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="card-power"><property name="label">Energia</property><property name="hexpand">True</property><property name="vexpand">True</property><property name="can-focus">True</property></object>
+              <packing><property name="left-attach">3</property><property name="top-attach">1</property></packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="card-streaming"><property name="label">Streaming opcional</property><property name="hexpand">True</property><property name="vexpand">True</property><property name="can-focus">True</property></object>
+              <packing><property name="left-attach">0</property><property name="top-attach">2</property></packing>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="status_label">
+            <property name="label">Pronto</property>
+            <property name="xalign">0</property>
+            <property name="name">status-label</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

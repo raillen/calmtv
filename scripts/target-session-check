@@ -1,0 +1,45 @@
+#!/bin/sh
+set -eu
+
+output_dir="${1:-build/target-session-check}"
+mkdir -p "$output_dir"
+
+find_pid() {
+	process_name=$1
+	pgrep -x "$process_name" | head -1 || true
+}
+
+shell_pid=$(find_pid tv-shell)
+matchbox_pid=$(find_pid matchbox-window-manager)
+
+{
+	printf 'timestamp=%s\n' "$(date -Is)"
+	printf 'display=%s\n' "${DISPLAY:-unset}"
+	printf 'xorg_pid=%s\n' "$(find_pid Xorg)"
+	printf 'matchbox_pid=%s\n' "${matchbox_pid:-unavailable}"
+	printf 'tv_shell_pid=%s\n' "${shell_pid:-unavailable}"
+	printf 'compositor_processes=%s\n' "$(pgrep -af '(^|/)(picom|compton|mutter|kwin_x11|xfwm4)( |$)' || true)"
+	printf 'xrandr_connected=\n'
+	xrandr --query 2>&1 | sed -n '/ connected/p' || true
+	printf 'memory=\n'
+free -m 2>&1 || true
+	printf 'systemd_user_failed=\n'
+systemctl --user --failed --no-legend 2>&1 || true
+} > "$output_dir/session.txt"
+
+if [ -n "$shell_pid" ] && [ -r "/proc/$shell_pid/smaps_rollup" ]; then
+	awk '/^Pss:/ {print "shell_pss_kib=" $2}' "/proc/$shell_pid/smaps_rollup" >> "$output_dir/session.txt"
+fi
+
+if [ -n "$matchbox_pid" ] && [ -n "$(pgrep -af '(^|/)(picom|compton|mutter|kwin_x11|xfwm4)( |$)' || true)" ]; then
+	printf '%s\n' 'compositor_check=FAIL' >> "$output_dir/session.txt"
+	exit 1
+fi
+
+if [ -z "$shell_pid" ] || [ -z "$matchbox_pid" ]; then
+	printf '%s\n' 'session_check=FAIL' >> "$output_dir/session.txt"
+	exit 1
+fi
+
+printf '%s\n' 'session_check=PASS' >> "$output_dir/session.txt"
+printf '%s\n' "Target session check written to $output_dir"

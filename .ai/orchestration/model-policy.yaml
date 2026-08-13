@@ -1,0 +1,6 @@
+# GENERATED COMPATIBILITY VIEW — canonical source: model-policy.json.
+version: 2
+selection_rule: cheapest-reliable-model-that-passes-gates
+cross_provider_review: true
+context_aware_routing: true
+yaml_status: legacy-read-only

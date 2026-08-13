@@ -1,0 +1,2 @@
+#!/bin/sh
+exec matchbox-window-manager -use_titlebar no -use_cursor no -use_desktop_mode plain

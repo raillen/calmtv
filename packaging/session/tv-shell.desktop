@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=TV Shell
+Comment=Remote-first GTK3 TV session
+Exec=/usr/bin/tv-shell-session
+TryExec=/usr/bin/tv-shell-session
+Type=Application

@@ -1,0 +1,31 @@
+window#tv-shell-window {
+  background-color: #0B0D10;
+  color: #F4F4F2;
+}
+
+#page-title {
+  color: #F4F4F2;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+#page-hint, #status-label {
+  color: #A8ADB5;
+  font-size: 18px;
+}
+
+button {
+  background-image: none;
+  background-color: #15181D;
+  border: 2px solid #1C2026;
+  border-radius: 12px;
+  color: #F4F4F2;
+  font-size: 24px;
+  padding: 22px;
+}
+
+button:focus, button:hover {
+  background-color: #1C2026;
+  border: 3px solid #E6A23C;
+  color: #FFFFFF;
+}

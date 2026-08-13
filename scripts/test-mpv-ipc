@@ -1,0 +1,40 @@
+#!/bin/sh
+set -eu
+
+socket_dir=$(mktemp -d)
+socket_path="$socket_dir/mpv.sock"
+cleanup() {
+	if [ -n "${mpv_pid:-}" ]; then
+		kill "$mpv_pid" 2>/dev/null || true
+		wait "$mpv_pid" 2>/dev/null || true
+	fi
+	rmdir "$socket_dir" 2>/dev/null || true
+}
+trap cleanup EXIT INT TERM
+
+mpv --idle=yes --no-video --no-terminal --input-ipc-server="$socket_path" >/dev/null 2>&1 &
+mpv_pid=$!
+tries=0
+while [ ! -S "$socket_path" ]; do
+	tries=$((tries + 1))
+	if [ "$tries" -gt 100 ]; then
+		echo "mpv IPC socket was not created" >&2
+		exit 1
+	fi
+	sleep 0.05
+done
+
+python3 - "$socket_path" <<'PY'
+import json
+import socket
+import sys
+
+with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as connection:
+    connection.settimeout(2)
+    connection.connect(sys.argv[1])
+    connection.sendall(b'{"command":["get_property","idle-active"],"request_id":1}\n')
+    response = json.loads(connection.makefile("rb").readline())
+    if response.get("error") != "success" or response.get("request_id") != 1:
+        raise SystemExit(f"unexpected mpv response: {response}")
+print("mpv JSON IPC: PASS")
+PY

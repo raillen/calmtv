@@ -1,0 +1,25 @@
+#!/bin/sh
+set -eu
+
+output_dir="${1:-build/evidence}"
+mkdir -p "$output_dir"
+
+{
+	printf 'timestamp=%s\n' "$(date -Is)"
+	printf 'hardware=%s\n' "$(uname -m)"
+	printf 'kernel=%s\n' "$(uname -sr)"
+	printf 'ram_kib=%s\n' "$(awk '/MemTotal:/ {print $2}' /proc/meminfo)"
+	printf 'display=%s\n' "${DISPLAY:-unset}"
+	printf 'go=%s\n' "$(go version 2>/dev/null || true)"
+	printf 'xorg=%s\n' "$(command -v Xorg || true)"
+	printf 'matchbox=%s\n' "$(command -v matchbox-window-manager || command -v matchbox-session || true)"
+	printf 'mpv=%s\n' "$(mpv --version 2>/dev/null | head -1 || true)"
+	printf 'va_api=%s\n' "$(command -v vainfo || true)"
+	printf 'shell_binary=%s\n' "$(command -v tv-shell || true)"
+} > "$output_dir/environment.txt"
+
+if [ -n "${TV_SHELL_PID:-}" ] && [ -r "/proc/$TV_SHELL_PID/smaps_rollup" ]; then
+	awk '/^Pss:/ {print "shell_pss_kib=" $2}' "/proc/$TV_SHELL_PID/smaps_rollup" > "$output_dir/shell-memory.txt"
+fi
+
+printf '%s\n' "P01 environment evidence written to $output_dir"

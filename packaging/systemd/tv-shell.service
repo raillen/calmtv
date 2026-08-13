@@ -1,0 +1,22 @@
+[Unit]
+Description=TV Shell graphical session
+After=graphical-session-pre.target dbus.service
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/lib/tv-shell/tv-shell-launcher
+Restart=on-failure
+RestartSec=2s
+StartLimitIntervalSec=60s
+StartLimitBurst=5
+Environment=GDK_BACKEND=x11
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%t/tv-shell %h/.config/tv-shell %h/.local/share/tv-shell
+
+# This unit is intentionally not enabled by package installation. The
+# display-manager session owns startup, which prevents duplicate Shell
+# processes when another desktop remains installed.

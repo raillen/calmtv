@@ -1,0 +1,986 @@
+{
+  "edges": [],
+  "nodes": [
+    {
+      "id": "DOC-DOCS-API-APP-CONTRACT",
+      "path": "docs/api/APP_CONTRACT.md",
+      "title": "App Contract",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-API-ATLAS",
+      "path": "docs/api/ATLAS.md",
+      "title": "API and Contract Map",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-API-INPUT-ACTIONS",
+      "path": "docs/api/INPUT_ACTIONS.md",
+      "title": "InputAction Contract",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-API-MEDIA-CONTRACTS",
+      "path": "docs/api/MEDIA_CONTRACTS.md",
+      "title": "Media Contracts",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-API-PROVIDER-API",
+      "path": "docs/api/PROVIDER_API.md",
+      "title": "Provider API",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-API-SMART-ORGANIZER-TOOLS",
+      "path": "docs/api/SMART_ORGANIZER_TOOLS.md",
+      "title": "Smart Organizer Tool Contract",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-API-SYSTEM-ADAPTER-CONTRACTS",
+      "path": "docs/api/SYSTEM_ADAPTER_CONTRACTS.md",
+      "title": "System Adapter Contracts",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-APP-MANAGER",
+      "path": "docs/architecture/APP_MANAGER.md",
+      "title": "AppManager",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-ARCHITECTURE",
+      "path": "docs/architecture/ARCHITECTURE.md",
+      "title": "System Architecture",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-ATLAS",
+      "path": "docs/architecture/ATLAS.md",
+      "title": "Architecture Map",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-DOWNLOADS-AND-NETWORK-MEDIA",
+      "path": "docs/architecture/DOWNLOADS_AND_NETWORK_MEDIA.md",
+      "title": "Downloads and Network Media",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-GAMES-AND-EMULATION",
+      "path": "docs/architecture/GAMES_AND_EMULATION.md",
+      "title": "Games and Emulation Architecture",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-INPUT-MANAGER",
+      "path": "docs/architecture/INPUT_MANAGER.md",
+      "title": "InputManager",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-IPTV-AND-EPG",
+      "path": "docs/architecture/IPTV_AND_EPG.md",
+      "title": "IPTV and EPG Architecture",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-MEDIA-CORE",
+      "path": "docs/architecture/MEDIA_CORE.md",
+      "title": "MediaCore",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-NANOTUBE-INTEGRATION",
+      "path": "docs/architecture/NANOTUBE_INTEGRATION.md",
+      "title": "NanoTube Integration",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-PROVIDER-MODEL",
+      "path": "docs/architecture/PROVIDER_MODEL.md",
+      "title": "Provider Model",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-SECURITY-BOUNDARIES",
+      "path": "docs/architecture/SECURITY_BOUNDARIES.md",
+      "title": "Security Boundaries",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-SMART-ORGANIZER",
+      "path": "docs/architecture/SMART_ORGANIZER.md",
+      "title": "Smart Organizer",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-STATE-AND-LIFECYCLE",
+      "path": "docs/architecture/STATE_AND_LIFECYCLE.md",
+      "title": "State and Lifecycle",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-SYSTEM-ADAPTERS",
+      "path": "docs/architecture/SYSTEM_ADAPTERS.md",
+      "title": "System Adapters",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-SYSTEM-LAYERS",
+      "path": "docs/architecture/SYSTEM_LAYERS.md",
+      "title": "System Layers",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ARCHITECTURE-WEB-RUNTIME",
+      "path": "docs/architecture/WEB_RUNTIME.md",
+      "title": "Web Runtime",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ATLAS",
+      "path": "docs/ATLAS.md",
+      "title": "TV Shell \u2014 Project ATLAS",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DATA-CACHE-AND-RETENTION",
+      "path": "docs/data/CACHE_AND_RETENTION.md",
+      "title": "Cache and Retention",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DATA-DATA-MODEL",
+      "path": "docs/data/DATA_MODEL.md",
+      "title": "Data Model",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DATA-MIGRATIONS",
+      "path": "docs/data/MIGRATIONS.md",
+      "title": "Data Migrations",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DATA-SQLITE-SCHEMA",
+      "path": "docs/data/SQLITE_SCHEMA.md",
+      "title": "SQLite Schema Plan",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0001-DEBIAN-13-MINIMAL",
+      "path": "docs/decisions/ADR-0001-DEBIAN-13-MINIMAL.md",
+      "title": "ADR-0001 \u2014 Debian 13 minimal base",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0002-AMD64-V1",
+      "path": "docs/decisions/ADR-0002-AMD64-V1.md",
+      "title": "ADR-0002 \u2014 amd64/x86-64 only for V1",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0003-XORG-MATCHBOX",
+      "path": "docs/decisions/ADR-0003-XORG-MATCHBOX.md",
+      "title": "ADR-0003 \u2014 Xorg \u002B Matchbox, no compositor in V1",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0004-GO-GTK3",
+      "path": "docs/decisions/ADR-0004-GO-GTK3.md",
+      "title": "ADR-0004 \u2014 Go \u002B GTK3/gotk3 for Shell",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0005-MODULAR-SUBPROCESSES",
+      "path": "docs/decisions/ADR-0005-MODULAR-SUBPROCESSES.md",
+      "title": "ADR-0005 \u2014 Modular shell \u002B adapters \u002B subprocesses",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0006-APP-MANAGER-CGROUPS",
+      "path": "docs/decisions/ADR-0006-APP-MANAGER-CGROUPS.md",
+      "title": "ADR-0006 \u2014 AppManager \u002B systemd/cgroups",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0007-MPV-JSON-IPC",
+      "path": "docs/decisions/ADR-0007-MPV-JSON-IPC.md",
+      "title": "ADR-0007 \u2014 mpv JSON IPC backend in V1",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0008-SQLITE-FTS5",
+      "path": "docs/decisions/ADR-0008-SQLITE-FTS5.md",
+      "title": "ADR-0008 \u2014 SQLite \u002B FTS5 for runtime state/search",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0009-SYSTEM-ADAPTERS",
+      "path": "docs/decisions/ADR-0009-SYSTEM-ADAPTERS.md",
+      "title": "ADR-0009 \u2014 System-service adapters",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0010-MPRIS",
+      "path": "docs/decisions/ADR-0010-MPRIS.md",
+      "title": "ADR-0010 \u2014 MPRIS for global media controls",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0011-RETROARCH",
+      "path": "docs/decisions/ADR-0011-RETROARCH.md",
+      "title": "ADR-0011 \u2014 RetroArch/Libretro on demand",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0012-FIREFOX-STREAMING-RUNTIME",
+      "path": "docs/decisions/ADR-0012-FIREFOX-STREAMING-RUNTIME.md",
+      "title": "ADR-0012 \u2014 Firefox ESR as commercial streaming runtime",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0013-BROWSER-OPTIONAL",
+      "path": "docs/decisions/ADR-0013-BROWSER-OPTIONAL.md",
+      "title": "ADR-0013 \u2014 Generic browser is optional",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0014-SMART-ORGANIZER",
+      "path": "docs/decisions/ADR-0014-SMART-ORGANIZER.md",
+      "title": "ADR-0014 \u2014 Deterministic-first Smart Organizer",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0015-SANDBOX",
+      "path": "docs/decisions/ADR-0015-SANDBOX.md",
+      "title": "ADR-0015 \u2014 AppArmor \u002B systemd hardening",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0016-FOREGROUND-POLICY",
+      "path": "docs/decisions/ADR-0016-FOREGROUND-POLICY.md",
+      "title": "ADR-0016 \u2014 One heavy foreground app by default",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0017-CALM-TV-UI",
+      "path": "docs/decisions/ADR-0017-CALM-TV-UI.md",
+      "title": "ADR-0017 \u2014 Calm TV UI and central focus",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0018-IPTV-XMLTV",
+      "path": "docs/decisions/ADR-0018-IPTV-XMLTV.md",
+      "title": "ADR-0018 \u2014 Extended M3U \u002B XMLTV",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0019-PROVIDERS-TORRENT",
+      "path": "docs/decisions/ADR-0019-PROVIDERS-TORRENT.md",
+      "title": "ADR-0019 \u2014 Provider/torrent isolation and content boundary",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0020-UPDATES",
+      "path": "docs/decisions/ADR-0020-UPDATES.md",
+      "title": "ADR-0020 \u2014 Package-based MVP update model",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ADR-0021-NO-TELEMETRY",
+      "path": "docs/decisions/ADR-0021-NO-TELEMETRY.md",
+      "title": "ADR-0021 \u2014 No telemetry by default",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DECISIONS-ATLAS",
+      "path": "docs/decisions/ATLAS.md",
+      "title": "Architecture Decision Records",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DEVELOPER-AI-WORKFLOW",
+      "path": "docs/developer/AI_WORKFLOW.md",
+      "title": "AI-Assisted Development Workflow",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DEVELOPER-ATLAS",
+      "path": "docs/developer/ATLAS.md",
+      "title": "Developer Documentation Map",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DEVELOPER-BUILD-AND-RUN",
+      "path": "docs/developer/BUILD_AND_RUN.md",
+      "title": "Build and Run",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DEVELOPER-CODEBASE-TOUR",
+      "path": "docs/developer/CODEBASE_TOUR.md",
+      "title": "Codebase Tour",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DEVELOPER-CONTEXT-AND-GOALS",
+      "path": "docs/developer/CONTEXT_AND_GOALS.md",
+      "title": "Context and Goals",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DEVELOPER-DEBUGGING",
+      "path": "docs/developer/DEBUGGING.md",
+      "title": "Debugging Playbook",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DEVELOPER-DEPENDENCY-POLICY",
+      "path": "docs/developer/DEPENDENCY_POLICY.md",
+      "title": "Dependency Policy",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DEVELOPER-DOCUMENTATION-MAINTENANCE",
+      "path": "docs/developer/DOCUMENTATION_MAINTENANCE.md",
+      "title": "Documentation Maintenance",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DEVELOPER-HOW-TO-ADD-APP",
+      "path": "docs/developer/HOW_TO_ADD_APP.md",
+      "title": "How-to \u2014 Add an App",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DEVELOPER-HOW-TO-ADD-MEDIA-PROVIDER",
+      "path": "docs/developer/HOW_TO_ADD_MEDIA_PROVIDER.md",
+      "title": "How-to \u2014 Add a Media Provider",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DEVELOPER-HOW-TO-ADD-SCREEN",
+      "path": "docs/developer/HOW_TO_ADD_SCREEN.md",
+      "title": "How-to \u2014 Add a Screen",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DEVELOPER-HOW-TO-ADD-SYSTEM-ADAPTER",
+      "path": "docs/developer/HOW_TO_ADD_SYSTEM_ADAPTER.md",
+      "title": "How-to \u2014 Add a System Adapter",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-DEVELOPER-PROJECT-INTELLIGENCE",
+      "path": "docs/developer/PROJECT_INTELLIGENCE.md",
+      "title": "Project Intelligence",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ONBOARDING-DEVELOPMENT-SETUP",
+      "path": "docs/onboarding/DEVELOPMENT_SETUP.md",
+      "title": "Development Setup",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ONBOARDING-FIRST-CONTRIBUTION",
+      "path": "docs/onboarding/FIRST_CONTRIBUTION.md",
+      "title": "First Contribution",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-ONBOARDING-HARDWARE-LAB",
+      "path": "docs/onboarding/HARDWARE_LAB.md",
+      "title": "Hardware Lab Setup",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-OPERATIONS-ATLAS",
+      "path": "docs/operations/ATLAS.md",
+      "title": "Operations Map",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-OPERATIONS-BACKUP-AND-RESTORE",
+      "path": "docs/operations/BACKUP_AND_RESTORE.md",
+      "title": "Backup and Restore",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-OPERATIONS-CONFIGURATION",
+      "path": "docs/operations/CONFIGURATION.md",
+      "title": "Configuration",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-OPERATIONS-DOCUMENTATION-SITE",
+      "path": "docs/operations/DOCUMENTATION_SITE.md",
+      "title": "Documentation Site",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-OPERATIONS-OBSERVABILITY",
+      "path": "docs/operations/OBSERVABILITY.md",
+      "title": "Observability",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-OPERATIONS-RECOVERY",
+      "path": "docs/operations/RECOVERY.md",
+      "title": "Recovery",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-OPERATIONS-RESOURCE-MANAGEMENT",
+      "path": "docs/operations/RESOURCE_MANAGEMENT.md",
+      "title": "Resource Management",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-OPERATIONS-RUNBOOKS",
+      "path": "docs/operations/RUNBOOKS.md",
+      "title": "Operational Runbooks",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-OPERATIONS-UPDATES",
+      "path": "docs/operations/UPDATES.md",
+      "title": "Updates",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-PRODUCT-CONTENT-POLICY",
+      "path": "docs/product/CONTENT_POLICY.md",
+      "title": "Content and Service Policy",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-PRODUCT-PERSONAS-AND-JOURNEYS",
+      "path": "docs/product/PERSONAS_AND_JOURNEYS.md",
+      "title": "Personas and Journeys",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-PRODUCT-PRINCIPLES",
+      "path": "docs/product/PRINCIPLES.md",
+      "title": "Product and Engineering Principles",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-PRODUCT-PRODUCT",
+      "path": "docs/product/PRODUCT.md",
+      "title": "Product",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-PRODUCT-REQUIREMENTS",
+      "path": "docs/product/REQUIREMENTS.md",
+      "title": "Requirements",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-PRODUCT-ROADMAP",
+      "path": "docs/product/ROADMAP.md",
+      "title": "Roadmap",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-PRODUCT-SCOPE",
+      "path": "docs/product/SCOPE.md",
+      "title": "Scope",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-REFERENCE-ATLAS-ALIGNMENT",
+      "path": "docs/reference/ATLAS_ALIGNMENT.md",
+      "title": "Project Atlas v0.2 Alignment",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-REFERENCE-COMMANDS",
+      "path": "docs/reference/COMMANDS.md",
+      "title": "Planned Development / Diagnostic Commands",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-REFERENCE-DEPENDENCIES",
+      "path": "docs/reference/DEPENDENCIES.md",
+      "title": "Dependency Catalog",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-REFERENCE-DOCUMENTATION-COVERAGE",
+      "path": "docs/reference/DOCUMENTATION_COVERAGE.md",
+      "title": "Documentation Coverage",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-REFERENCE-FORMAT-MATRIX",
+      "path": "docs/reference/FORMAT_MATRIX.md",
+      "title": "Format Matrix",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-REFERENCE-GENERATED-ADAPTERS",
+      "path": "docs/reference/GENERATED_ADAPTERS.md",
+      "title": "Generated Platform Adapters",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-REFERENCE-GLOSSARY",
+      "path": "docs/reference/GLOSSARY.md",
+      "title": "Glossary",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-REFERENCE-PERFORMANCE-TARGETS",
+      "path": "docs/reference/PERFORMANCE_TARGETS.md",
+      "title": "Performance Target Reference",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-REFERENCE-STACK",
+      "path": "docs/reference/STACK.md",
+      "title": "Technology Stack Reference",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-REFERENCE-SYSTEM-SERVICES",
+      "path": "docs/reference/SYSTEM_SERVICES.md",
+      "title": "System Services Reference",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-REFERENCE-TOOLING-AND-REUSE",
+      "path": "docs/reference/TOOLING_AND_REUSE.md",
+      "title": "Tooling and Reuse Matrix",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-RELEASE-CHANGELOG-POLICY",
+      "path": "docs/release/CHANGELOG_POLICY.md",
+      "title": "Changelog Policy",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-RELEASE-COMPATIBILITY-POLICY",
+      "path": "docs/release/COMPATIBILITY_POLICY.md",
+      "title": "Compatibility Policy",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-RELEASE-DEPRECATION-POLICY",
+      "path": "docs/release/DEPRECATION_POLICY.md",
+      "title": "Deprecation and Support Lifecycle",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-RELEASE-PACKAGING",
+      "path": "docs/release/PACKAGING.md",
+      "title": "Packaging",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-RELEASE-RELEASE-PROCESS",
+      "path": "docs/release/RELEASE_PROCESS.md",
+      "title": "Release Process",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-SECURITY-ATLAS",
+      "path": "docs/security/ATLAS.md",
+      "title": "Security Documentation Map",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-SECURITY-NETWORK-AND-PROVIDERS",
+      "path": "docs/security/NETWORK_AND_PROVIDERS.md",
+      "title": "Network and Provider Security",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-SECURITY-PRIVACY",
+      "path": "docs/security/PRIVACY.md",
+      "title": "Privacy",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-SECURITY-SANDBOXING",
+      "path": "docs/security/SANDBOXING.md",
+      "title": "Sandboxing",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-SECURITY-SECRETS-AND-CREDENTIALS",
+      "path": "docs/security/SECRETS_AND_CREDENTIALS.md",
+      "title": "Secrets and Credentials",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-SECURITY-SMART-ORGANIZER-SECURITY",
+      "path": "docs/security/SMART_ORGANIZER_SECURITY.md",
+      "title": "Smart Organizer Security",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-SECURITY-SUPPLY-CHAIN",
+      "path": "docs/security/SUPPLY_CHAIN.md",
+      "title": "Supply Chain",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-SECURITY-THREAT-MODEL",
+      "path": "docs/security/THREAT_MODEL.md",
+      "title": "Threat Model",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-SUPPORT-DIAGNOSTICS",
+      "path": "docs/support/DIAGNOSTICS.md",
+      "title": "Diagnostics",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-SUPPORT-KNOWN-LIMITATIONS",
+      "path": "docs/support/KNOWN_LIMITATIONS.md",
+      "title": "Known / Planned Limitations",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-SUPPORT-REPORTING",
+      "path": "docs/support/REPORTING.md",
+      "title": "Reporting Problems",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-SUPPORT-TROUBLESHOOTING",
+      "path": "docs/support/TROUBLESHOOTING.md",
+      "title": "Troubleshooting by Symptom",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-TESTING-ATLAS",
+      "path": "docs/testing/ATLAS.md",
+      "title": "Testing Map",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-TESTING-HARDWARE-MATRIX",
+      "path": "docs/testing/HARDWARE_MATRIX.md",
+      "title": "Hardware Matrix",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-TESTING-MEDIA-PLAYBACK-TESTS",
+      "path": "docs/testing/MEDIA_PLAYBACK_TESTS.md",
+      "title": "Media Playback Tests",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-TESTING-PERFORMANCE-BUDGETS",
+      "path": "docs/testing/PERFORMANCE_BUDGETS.md",
+      "title": "Performance Budgets",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-TESTING-RELEASE-GATES",
+      "path": "docs/testing/RELEASE_GATES.md",
+      "title": "Release Gates",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-TESTING-SECURITY-TESTS",
+      "path": "docs/testing/SECURITY_TESTS.md",
+      "title": "Security Tests",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-TESTING-TEST-STRATEGY",
+      "path": "docs/testing/TEST_STRATEGY.md",
+      "title": "Test Strategy",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-TESTING-UI-NAVIGATION-TESTS",
+      "path": "docs/testing/UI_NAVIGATION_TESTS.md",
+      "title": "UI Navigation Tests",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-UI-UX-ACCESSIBILITY",
+      "path": "docs/ui-ux/ACCESSIBILITY.md",
+      "title": "UI Accessibility",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-UI-UX-ATLAS",
+      "path": "docs/ui-ux/ATLAS.md",
+      "title": "UI/UX Map",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-UI-UX-DESIGN-SYSTEM",
+      "path": "docs/ui-ux/DESIGN_SYSTEM.md",
+      "title": "Design System \u2014 Calm TV UI",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-UI-UX-FOCUS-AND-NAVIGATION",
+      "path": "docs/ui-ux/FOCUS_AND_NAVIGATION.md",
+      "title": "Focus and Remote Navigation",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-UI-UX-INFORMATION-ARCHITECTURE",
+      "path": "docs/ui-ux/INFORMATION_ARCHITECTURE.md",
+      "title": "Information Architecture",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-UI-UX-IPTV-EPG",
+      "path": "docs/ui-ux/IPTV_EPG.md",
+      "title": "IPTV / EPG Interaction",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-UI-UX-MOTION-AND-PERFORMANCE",
+      "path": "docs/ui-ux/MOTION_AND_PERFORMANCE.md",
+      "title": "Motion and UI Performance",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-UI-UX-PLAYER-AND-OVERLAYS",
+      "path": "docs/ui-ux/PLAYER_AND_OVERLAYS.md",
+      "title": "Player and Overlays",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-UI-UX-SCREEN-SPECS",
+      "path": "docs/ui-ux/SCREEN_SPECS.md",
+      "title": "Screen Specifications",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-UI-UX-WIREFRAMES",
+      "path": "docs/ui-ux/WIREFRAMES.md",
+      "title": "Wireframes",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-USER-ATLAS",
+      "path": "docs/user/ATLAS.md",
+      "title": "User Documentation Map",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-USER-EXPLANATION-PRIVACY-AND-LOCAL-AI",
+      "path": "docs/user/explanation/PRIVACY_AND_LOCAL_AI.md",
+      "title": "Explanation \u2014 Privacy and Local AI",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-USER-EXPLANATION-RESOURCE-MANAGEMENT",
+      "path": "docs/user/explanation/RESOURCE_MANAGEMENT.md",
+      "title": "Explanation \u2014 Why Apps Do Not Stay Open",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-USER-HOW-TO-ADD-IPTV-PLAYLIST",
+      "path": "docs/user/how-to/ADD_IPTV_PLAYLIST.md",
+      "title": "How-to \u2014 Add an IPTV Playlist",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-USER-HOW-TO-ADD-ROM-LIBRARY",
+      "path": "docs/user/how-to/ADD_ROM_LIBRARY.md",
+      "title": "How-to \u2014 Add a ROM Library",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-USER-HOW-TO-ORGANIZE-DOWNLOADS",
+      "path": "docs/user/how-to/ORGANIZE_DOWNLOADS.md",
+      "title": "How-to \u2014 Organize Downloads",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-USER-HOW-TO-USE-NETWORK-MEDIA",
+      "path": "docs/user/how-to/USE_NETWORK_MEDIA.md",
+      "title": "How-to \u2014 Use Network Media",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-USER-HOW-TO-USE-STREAMING-SERVICES",
+      "path": "docs/user/how-to/USE_STREAMING_SERVICES.md",
+      "title": "How-to \u2014 Use Commercial Streaming Services",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-USER-REFERENCE-CONTROLS",
+      "path": "docs/user/reference/CONTROLS.md",
+      "title": "Controls Reference",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-USER-REFERENCE-SUPPORTED-FORMATS",
+      "path": "docs/user/reference/SUPPORTED_FORMATS.md",
+      "title": "Supported Formats and Sources",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-USER-TUTORIALS-GETTING-STARTED",
+      "path": "docs/user/tutorials/GETTING_STARTED.md",
+      "title": "Tutorial \u2014 Getting Started",
+      "type": "document",
+      "visibility": "internal"
+    },
+    {
+      "id": "DOC-DOCS-USER-TUTORIALS-NAVIGATE-WITH-REMOTE",
+      "path": "docs/user/tutorials/NAVIGATE_WITH_REMOTE.md",
+      "title": "Tutorial \u2014 Navigate With a Remote",
+      "type": "document",
+      "visibility": "internal"
+    }
+  ],
+  "schema_version": 1
+}

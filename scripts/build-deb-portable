@@ -1,0 +1,56 @@
+#!/bin/sh
+set -eu
+
+version=${TV_SHELL_VERSION:-0.1.0}
+architecture=amd64
+package_name=tv-shell
+work_dir=$(mktemp -d)
+cleanup() { rm -rf "$work_dir"; }
+trap cleanup EXIT INT TERM
+
+if [ ! -x build/tv-shell ]; then
+	echo "build/tv-shell is required; run make build first" >&2
+	exit 1
+fi
+if ! command -v ar >/dev/null 2>&1 || ! command -v tar >/dev/null 2>&1 || ! command -v xz >/dev/null 2>&1; then
+	echo "ar, tar and xz are required to build a portable Debian package" >&2
+	exit 127
+fi
+
+package_root="$work_dir/root"
+mkdir -p "$package_root/DEBIAN" "$package_root/usr/bin" "$package_root/usr/lib/tv-shell" "$package_root/usr/share/xsessions" "$package_root/usr/share/tv-shell" "$package_root/usr/lib/systemd/user" "$package_root/usr/lib/systemd/system" "$package_root/usr/lib/systemd/user" "$package_root/etc/X11/xorg.conf.d" "$package_root/etc/systemd/zram-generator.conf.d" "$package_root/usr/share/polkit-1/actions"
+cp build/tv-shell "$package_root/usr/bin/tv-shell"
+cp scripts/tv-shell-launcher scripts/measure-shell scripts/tv-shell-update scripts/target-preflight scripts/target-session-check "$package_root/usr/lib/tv-shell/"
+cp packaging/session/tv-shell-session "$package_root/usr/bin/tv-shell-session"
+cp packaging/session/tv-shell.desktop "$package_root/usr/share/xsessions/"
+cp packaging/systemd/tv-shell.service packaging/systemd/tv-shell-recovery.path packaging/systemd/tv-shell-recovery.service "$package_root/usr/lib/systemd/user/"
+cp packaging/systemd/tv-shell-zram.service "$package_root/usr/lib/systemd/system/"
+cp packaging/xorg/10-tv-shell.conf "$package_root/etc/X11/xorg.conf.d/"
+cp packaging/zram-generator.conf "$package_root/etc/systemd/zram-generator.conf.d/"
+cp packaging/polkit/org.calmtv.tv-shell-update.policy "$package_root/usr/share/polkit-1/actions/"
+cp packaging/matchbox/session "$package_root/usr/share/tv-shell/"
+chmod 0755 "$package_root/usr/bin/tv-shell" "$package_root/usr/bin/tv-shell-session" "$package_root/usr/lib/tv-shell/"*
+chmod 0644 "$package_root/usr/share/xsessions/tv-shell.desktop"
+
+cat > "$package_root/DEBIAN/control" <<EOF
+Package: $package_name
+Version: $version
+Section: misc
+Priority: optional
+Architecture: $architecture
+Maintainer: TV Shell maintainers <maintainers@raillen.dev>
+Depends: dbus, libgtk-3-0, matchbox-window-manager, xserver-xorg, systemd-zram-generator, policykit-1
+Description: remote-first TV shell for low-end Debian systems
+ Ultra-light GTK3 TV shell with central keyboard/D-pad navigation.
+EOF
+
+mkdir -p dist
+data_archive="$work_dir/data.tar.xz"
+control_archive="$work_dir/control.tar.xz"
+tar -C "$package_root" --owner=0 --group=0 --numeric-owner -cJf "$data_archive" --exclude=DEBIAN .
+tar -C "$package_root/DEBIAN" --owner=0 --group=0 --numeric-owner -cJf "$control_archive" .
+printf '2.0\n' > "$work_dir/debian-binary"
+artifact="dist/${package_name}_${version}_${architecture}.deb"
+rm -f "$artifact"
+ar rcs "$artifact" "$work_dir/debian-binary" "$control_archive" "$data_archive"
+printf '%s\n' "$artifact"

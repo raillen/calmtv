@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	mkdir -p debian/tv-shell/usr/bin
+	go build -tags sqlite_fts5 -trimpath -o debian/tv-shell/usr/bin/tv-shell ./cmd/tv-shell
+
+override_dh_auto_install:
+	dh_install
+
+override_dh_fixperms:
+	dh_fixperms
+	chmod 0755 debian/tv-shell/usr/bin/tv-shell-session
+	chmod 0644 debian/tv-shell/usr/share/xsessions/tv-shell.desktop
