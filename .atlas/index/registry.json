@@ -692,7 +692,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 749,
+      "estimated_tokens": 822,
       "id": "DOC-DOCS-DEVELOPER-BUILD-AND-RUN",
       "path": "docs/developer/BUILD_AND_RUN.md",
       "schema_version": 1,
@@ -939,7 +939,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 268,
+      "estimated_tokens": 336,
       "id": "DOC-DOCS-OPERATIONS-RECOVERY",
       "path": "docs/operations/RECOVERY.md",
       "schema_version": 1,
@@ -978,7 +978,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 130,
+      "estimated_tokens": 432,
       "id": "DOC-DOCS-OPERATIONS-UPDATES",
       "path": "docs/operations/UPDATES.md",
       "schema_version": 1,
@@ -1368,7 +1368,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 134,
+      "estimated_tokens": 202,
       "id": "DOC-DOCS-SECURITY-SUPPLY-CHAIN",
       "path": "docs/security/SUPPLY_CHAIN.md",
       "schema_version": 1,
@@ -1381,7 +1381,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 175,
+      "estimated_tokens": 272,
       "id": "DOC-DOCS-SECURITY-THREAT-MODEL",
       "path": "docs/security/THREAT_MODEL.md",
       "schema_version": 1,
@@ -1823,7 +1823,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 170,
+      "estimated_tokens": 227,
       "id": "DOC-DOCS-USER-TUTORIALS-NAVIGATE-WITH-REMOTE",
       "path": "docs/user/tutorials/NAVIGATE_WITH_REMOTE.md",
       "schema_version": 1,

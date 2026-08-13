@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-version=${TV_SHELL_VERSION:-0.1.3}
+version=${TV_SHELL_VERSION:-0.1.4}
 architecture=amd64
 package_name=tv-shell
 work_dir=$(mktemp -d)

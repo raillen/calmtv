@@ -2,6 +2,9 @@
 set -eu
 
 if [ "$(id -u)" -eq 0 ]; then
+	if [ -x /usr/local/sbin/calm-tv-remote-update ]; then
+		exec /usr/local/sbin/calm-tv-remote-update
+	fi
 	apt-get update
 	apt-get install --only-upgrade -y tv-shell
 	exit 0

@@ -1,0 +1,187 @@
+#!/bin/sh
+set -eu
+
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+export PATH
+
+repo=${CALM_TV_GITHUB_REPO:-raillen/calmtv}
+ref=${CALM_TV_SETUP_REF:-main}
+authorized_key_file=''
+target_user=${CALM_TV_SSH_USER:-${SUDO_USER:-}}
+
+usage() {
+	cat <<'EOF'
+Uso:
+  calm-tv-remote-setup [--authorized-key-file ARQUIVO] [--user USUARIO]
+
+Sem uma chave pública, o SSH é configurado temporariamente com senha para o
+bootstrap. Depois instale uma chave e execute novamente com
+--authorized-key-file para desativar autenticação por senha.
+EOF
+}
+
+while [ "$#" -gt 0 ]; do
+	case "$1" in
+		--authorized-key-file)
+			[ "$#" -ge 2 ] || { usage >&2; exit 2; }
+			authorized_key_file=$2
+			shift 2
+			;;
+		--user)
+			[ "$#" -ge 2 ] || { usage >&2; exit 2; }
+			target_user=$2
+			shift 2
+			;;
+		-h|--help)
+			usage
+			exit 0
+			;;
+		*)
+			echo "Opção desconhecida: $1" >&2
+			usage >&2
+			exit 2
+			;;
+	esac
+done
+
+if [ "$(id -u)" -ne 0 ]; then
+	echo "Execute com sudo: wget ... | sudo sh" >&2
+	exit 1
+fi
+if [ -z "$target_user" ] || [ "$target_user" = root ]; then
+	echo "Não foi possível identificar um usuário não-root. Use --user USUARIO." >&2
+	exit 1
+fi
+case "$target_user" in
+	*[!A-Za-z0-9._-]*)
+		echo "Nome de usuário inválido." >&2
+		exit 2
+		;;
+esac
+if ! id "$target_user" >/dev/null 2>&1; then
+	echo "Usuário não encontrado: $target_user" >&2
+	exit 1
+fi
+
+target_home=$(getent passwd "$target_user" | cut -d: -f6)
+if [ -z "$target_home" ] || [ ! -d "$target_home" ]; then
+	echo "Diretório home inválido para $target_user." >&2
+	exit 1
+fi
+
+temporary_dir=$(mktemp -d /tmp/calm-tv-remote-setup.XXXXXX)
+cleanup() {
+	rm -rf "$temporary_dir"
+}
+trap cleanup EXIT INT TERM
+
+DEBIAN_FRONTEND=noninteractive apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get install -y openssh-server ca-certificates wget
+
+raw_base="https://raw.githubusercontent.com/$repo/$ref/scripts"
+wget -qO "$temporary_dir/calm-tv-remote-update" "$raw_base/calm-tv-remote-update"
+sh -n "$temporary_dir/calm-tv-remote-update"
+install -o root -g root -m 0755 "$temporary_dir/calm-tv-remote-update" /usr/local/sbin/calm-tv-remote-update
+
+install -d -o root -g root -m 0755 /etc/calm-tv
+cat > /etc/calm-tv/update.conf <<EOF
+CALM_TV_GITHUB_REPO='$repo'
+CALM_TV_PACKAGE='tv-shell'
+EOF
+chmod 0644 /etc/calm-tv/update.conf
+
+password_authentication=yes
+if [ -n "$authorized_key_file" ]; then
+	if [ ! -f "$authorized_key_file" ]; then
+		echo "Arquivo de chave não encontrado: $authorized_key_file" >&2
+		exit 1
+	fi
+	public_key=$(sed -n '1p' "$authorized_key_file")
+	case "$public_key" in
+		ssh-ed25519\ *|ssh-rsa\ *|ecdsa-sha2-nistp256\ *|ecdsa-sha2-nistp384\ *|ecdsa-sha2-nistp521\ *|sk-ssh-ed25519@openssh.com\ *|sk-ecdsa-sha2-nistp256@openssh.com\ *) ;;
+		*)
+			echo "A primeira linha não parece uma chave pública SSH suportada." >&2
+			exit 2
+			;;
+	esac
+	ssh_dir="$target_home/.ssh"
+	authorized_keys="$ssh_dir/authorized_keys"
+	install -d -o "$target_user" -g "$target_user" -m 0700 "$ssh_dir"
+	touch "$authorized_keys"
+	chown "$target_user:$target_user" "$authorized_keys"
+	chmod 0600 "$authorized_keys"
+	if ! grep -Fqx "$public_key" "$authorized_keys"; then
+		printf '%s\n' "$public_key" >> "$authorized_keys"
+	fi
+	password_authentication=no
+fi
+
+ssh_config=/etc/ssh/sshd_config.d/90-calm-tv.conf
+backup_config="$temporary_dir/90-calm-tv.conf.backup"
+had_config=no
+if [ -f "$ssh_config" ]; then
+	cp "$ssh_config" "$backup_config"
+	had_config=yes
+fi
+{
+	printf '%s\n' '# Managed by Calm TV remote setup'
+	printf '%s\n' 'PubkeyAuthentication yes'
+	printf 'PasswordAuthentication %s\n' "$password_authentication"
+	printf '%s\n' 'KbdInteractiveAuthentication no'
+	printf '%s\n' 'PermitRootLogin no'
+	printf '%s\n' 'PermitEmptyPasswords no'
+	printf '%s\n' 'MaxAuthTries 5'
+	printf '%s\n' 'LoginGraceTime 30'
+	printf '%s\n' 'X11Forwarding no'
+	printf '%s\n' 'AllowAgentForwarding no'
+	printf '%s\n' 'AllowTcpForwarding no'
+	printf '%s\n' 'PermitTunnel no'
+	printf 'AllowUsers %s\n' "$target_user"
+} > "$ssh_config"
+if ! sshd -t; then
+	if [ "$had_config" = yes ]; then
+		cp "$backup_config" "$ssh_config"
+	else
+		rm -f "$ssh_config"
+	fi
+	echo "A configuração do SSH falhou na validação; nenhuma alteração foi ativada." >&2
+	exit 1
+fi
+
+if systemctl enable --now ssh.service 2>/dev/null; then
+	:
+elif systemctl enable --now sshd.service 2>/dev/null; then
+	:
+else
+	echo "Não foi possível ativar ssh.service/sshd.service." >&2
+	exit 1
+fi
+
+sudoers_file=/etc/sudoers.d/calm-tv-update-$target_user
+printf '%s ALL=(root) NOPASSWD: /usr/local/sbin/calm-tv-remote-update\n' "$target_user" > "$sudoers_file"
+chmod 0440 "$sudoers_file"
+if command -v visudo >/dev/null 2>&1 && ! visudo -cf "$sudoers_file" >/dev/null; then
+	rm -f "$sudoers_file"
+	echo "A regra sudo do atualizador falhou na validação." >&2
+	exit 1
+fi
+
+ip_addresses=$(hostname -I 2>/dev/null || true)
+printf '\nCalm TV: acesso remoto configurado.\n'
+printf 'Usuário SSH: %s\n' "$target_user"
+printf 'IPs detectados: %s\n' "${ip_addresses:-consulte hostname -I}"
+printf '\nAtualizar remotamente e reiniciar a sessão gráfica:\n'
+printf '  ssh %s@IP_DO_NOTEBOOK sudo -n /usr/local/sbin/calm-tv-remote-update\n' "$target_user"
+printf '\n'
+if [ "$password_authentication" = yes ]; then
+	cat <<'EOF'
+Atenção: autenticação por senha está ativa para o bootstrap. Depois copie uma
+chave pública e execute novamente:
+
+  wget -qO- https://raw.githubusercontent.com/raillen/calmtv/main/scripts/calm-tv-remote-setup | sudo sh -s -- --authorized-key-file ~/.ssh/id_ed25519.pub
+
+Com uma chave instalada, a senha SSH será desativada.
+EOF
+else
+	printf '%s\n' 'Autenticação por senha foi desativada; somente a chave configurada será aceita.'
+fi

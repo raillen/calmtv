@@ -82,6 +82,11 @@ TV_SHELL_MONITOR=1 /usr/bin/tv-shell
 nome do monitor será exposta nas Quick Settings quando o adapter de display
 estiver conectado à UI.
 
+Para manutenção remota, consulte [`docs/operations/UPDATES.md`](../operations/UPDATES.md).
+Para abrir um terminal local avançado, pressione `Menu` na Home, entre em
+Diagnóstico e selecione **Terminal avançado**. O Q4OS precisa ter um terminal
+gráfico instalado; `qterminal` é uma opção leve.
+
 Esse relatório registra o hardware e as dependências sem instalar ou alterar
 serviços.
 

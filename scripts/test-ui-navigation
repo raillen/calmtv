@@ -31,7 +31,7 @@ shell_pid=$!
 sleep 1
 window_id=$(xdotool search --name 'Calm TV' | head -1)
 xdotool windowactivate "$window_id"
-xdotool key Down Down Return Right Down Return Home
+xdotool key Down Down Return Right Down Return Home Menu Down Escape
 sleep 1
 if grep -Eq 'CRITICAL|Segmentation' "$log_file"; then
 	cat "$log_file" >&2

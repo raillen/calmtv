@@ -7,7 +7,7 @@ opcional e não remove o desktop atual.
 
 ```bash
 sudo apt update
-sudo apt install ./tv-shell_0.1.3_amd64.deb
+sudo apt install ./tv-shell_0.1.4_amd64.deb
 ```
 
 O pacote aceita os nomes modernos `pkexec`/`polkitd` e mantém fallback para o
@@ -33,6 +33,21 @@ Com a sessão Calm TV ativa, a partir de uma cópia do projeto execute:
 ./scripts/target-preflight build/target-preflight
 ./scripts/target-session-check build/target-session-check
 ```
+
+## Atualização remota e terminal avançado
+
+Para configurar SSH e o atualizador remoto:
+
+```bash
+wget -qO- https://raw.githubusercontent.com/raillen/calmtv/main/scripts/calm-tv-remote-setup | sudo sh
+```
+
+O modo recomendado é repetir o comando com `--authorized-key-file` usando a
+chave pública do computador administrador. Consulte a documentação de
+atualizações para o fluxo completo.
+
+Na interface, pressione **Menu** na Home, entre em **Diagnóstico** e escolha
+**Terminal avançado**. Ele abre um terminal instalado como usuário normal.
 
 O pacote não promete aceleração VA-API, streaming comercial ou RetroArch
 quando os respectivos componentes não estiverem instalados no Q4OS.

@@ -39,6 +39,9 @@ evidence gates.
 The Debian package exposes `Calm TV` as an additional display-manager
 session, so it can be tested beside an existing desktop without replacing it.
 
+For Q4OS hardware maintenance, the repository also provides a one-command
+SSH/update bootstrap under [`docs/operations/UPDATES.md`](docs/operations/UPDATES.md).
+
 ## Start here
 
 Humans and AI agents should start at [`ENTRYPOINT.md`](ENTRYPOINT.md), then use [`docs/ATLAS.md`](docs/ATLAS.md) as an intent router.

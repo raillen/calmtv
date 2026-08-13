@@ -1,3 +1,9 @@
+tv-shell (0.1.4-1) unstable; urgency=low
+
+  * Add remote setup/update helpers and an advanced maintenance terminal entry.
+
+ -- TV Shell maintainers <maintainers@example.invalid>  Thu, 13 Aug 2026 18:15:00 -0300
+
 tv-shell (0.1.3-1) unstable; urgency=low
 
   * Rename the user-facing session to Calm TV.

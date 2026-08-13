@@ -11,3 +11,8 @@ For every shipped dependency/package:
 - update browser/DRM/security-sensitive components promptly.
 
 Official provider catalogs and update channels are part of the trust boundary and require integrity controls.
+
+The Q4OS bootstrap updater currently uses GitHub HTTPS plus the release
+checksum and package metadata validation. This is suitable for hardware
+testing, but signed APT repository metadata or signed release artifacts remain
+required before unattended production updates.

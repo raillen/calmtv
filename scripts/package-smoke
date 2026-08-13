@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-required_files='packaging/debian/control packaging/debian/rules packaging/debian/install packaging/debian/source/format packaging/systemd/tv-shell.service packaging/systemd/tv-shell-zram.service packaging/xorg/10-tv-shell.conf packaging/matchbox/session packaging/polkit/org.calmtv.tv-shell-update.policy packaging/session/tv-shell-session packaging/session/tv-shell.desktop'
+required_files='packaging/debian/control packaging/debian/rules packaging/debian/install packaging/debian/source/format packaging/systemd/tv-shell.service packaging/systemd/tv-shell-zram.service packaging/xorg/10-tv-shell.conf packaging/matchbox/session packaging/polkit/org.calmtv.tv-shell-update.policy packaging/session/tv-shell-session packaging/session/tv-shell.desktop scripts/calm-tv-remote-setup scripts/calm-tv-remote-update'
 for file in $required_files; do
 	if [ ! -f "$file" ]; then
 		echo "missing packaging file: $file" >&2
@@ -35,5 +35,9 @@ if command -v desktop-file-validate >/dev/null 2>&1; then
 	desktop-file-validate packaging/session/tv-shell.desktop
 fi
 sh -n scripts/target-preflight scripts/target-session-check
-sh -n scripts/build-deb-portable
+sh -n scripts/build-deb-portable scripts/calm-tv-remote-setup scripts/calm-tv-remote-update
+grep -q 'PermitRootLogin no' scripts/calm-tv-remote-setup
+grep -q 'AllowTcpForwarding no' scripts/calm-tv-remote-setup
+grep -q 'sha256sum -c' scripts/calm-tv-remote-update
+grep -q 'display-manager.service' scripts/calm-tv-remote-update
 printf '%s\n' 'Debian packaging metadata smoke: PASS'

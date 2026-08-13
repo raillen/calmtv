@@ -8,6 +8,7 @@ func TestFromKeyMapsRemoteActions(t *testing.T) {
 		"Return":        Accept,
 		"Escape":        Back,
 		"Home":          Home,
+		"Menu":          Menu,
 		"XF86AudioMute": Mute,
 		"Page_Down":     ChannelDown,
 	}

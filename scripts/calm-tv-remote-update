@@ -1,0 +1,98 @@
+#!/bin/sh
+set -eu
+
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+export PATH
+
+config_file=/etc/calm-tv/update.conf
+repo=${CALM_TV_GITHUB_REPO:-raillen/calmtv}
+package=${CALM_TV_PACKAGE:-tv-shell}
+restart=${CALM_TV_RESTART:-1}
+
+if [ "$(id -u)" -ne 0 ]; then
+	echo "Este atualizador precisa ser executado como root ou via sudo." >&2
+	exit 1
+fi
+if [ "$#" -ne 0 ]; then
+	echo "Uso: calm-tv-remote-update" >&2
+	exit 2
+fi
+if [ -f "$config_file" ]; then
+	# O arquivo é instalado pelo setup como root e não recebe entrada da rede.
+	. "$config_file"
+fi
+if [ "$(dpkg --print-architecture)" != "amd64" ]; then
+	echo "Calm TV nesta release exige arquitetura amd64." >&2
+	exit 1
+fi
+
+log() {
+	message=$1
+	printf '%s\n' "$message"
+	logger -t calm-tv-update -- "$message" 2>/dev/null || true
+}
+
+if ! command -v wget >/dev/null 2>&1 || ! command -v sha256sum >/dev/null 2>&1 || ! command -v dpkg-deb >/dev/null 2>&1; then
+	echo "Dependências ausentes: wget, sha256sum e dpkg-deb são necessários." >&2
+	exit 127
+fi
+
+release_json=$(wget -qO- --header='Accept: application/vnd.github+json' "https://api.github.com/repos/$repo/releases/latest") || {
+	echo "Não foi possível consultar a release mais recente do Calm TV." >&2
+	exit 1
+}
+latest_version=$(printf '%s\n' "$release_json" | sed -n 's/.*"tag_name"[[:space:]]*:[[:space:]]*"v\([^"]*\)".*/\1/p' | head -n 1)
+if ! printf '%s\n' "$latest_version" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+	echo "A resposta do GitHub não contém uma versão semântica válida." >&2
+	exit 1
+fi
+
+current_version=$(dpkg-query -W -f='${Version}' "$package" 2>/dev/null || true)
+if [ -n "$current_version" ] && dpkg --compare-versions "$current_version" ge "$latest_version"; then
+	log "Calm TV já está atualizado: $current_version"
+	exit 0
+fi
+
+temporary_dir=$(mktemp -d /tmp/calm-tv-update.XXXXXX)
+cleanup() {
+	rm -rf "$temporary_dir"
+}
+trap cleanup EXIT INT TERM
+
+artifact="${package}_${latest_version}_amd64.deb"
+download_base="https://github.com/$repo/releases/download/v$latest_version"
+log "Baixando Calm TV $latest_version"
+wget -qO "$temporary_dir/$artifact" "$download_base/$artifact" || {
+	echo "Não foi possível baixar o pacote $artifact." >&2
+	exit 1
+}
+wget -qO "$temporary_dir/$artifact.sha256" "$download_base/$artifact.sha256" || {
+	echo "Não foi possível baixar o checksum do pacote." >&2
+	exit 1
+}
+(
+	cd "$temporary_dir"
+	sha256sum -c "$artifact.sha256"
+)
+
+package_name=$(dpkg-deb -f "$temporary_dir/$artifact" Package)
+package_version=$(dpkg-deb -f "$temporary_dir/$artifact" Version)
+package_architecture=$(dpkg-deb -f "$temporary_dir/$artifact" Architecture)
+if [ "$package_name" != "$package" ] || [ "$package_version" != "$latest_version" ] || [ "$package_architecture" != "amd64" ]; then
+	echo "O artefato baixado não corresponde ao pacote esperado." >&2
+	exit 1
+fi
+
+DEBIAN_FRONTEND=noninteractive apt-get install -y "$temporary_dir/$artifact"
+log "Calm TV $latest_version instalado"
+
+if [ "$restart" = "1" ]; then
+	if systemctl is-active --quiet display-manager.service; then
+		log "Reiniciando a sessão gráfica"
+		systemctl restart display-manager.service
+	else
+		log "Display manager não está ativo; a atualização foi instalada sem reiniciar a sessão"
+	fi
+else
+	log "Sessão gráfica não reiniciada (CALM_TV_RESTART=$restart)"
+fi

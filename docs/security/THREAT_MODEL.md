@@ -9,6 +9,7 @@ Primary untrusted inputs:
 - archives/ROMs/media files;
 - filenames/metadata sent to the organizer;
 - local network remote-control clients.
+- SSH clients and downloaded release metadata/packages.
 
 Primary assets:
 - user files;
@@ -26,3 +27,9 @@ High-priority threats:
 - local network remote abuse;
 - resource exhaustion on 2 GB hardware;
 - supply-chain compromise.
+
+Remote maintenance is limited to a non-root SSH account plus a single
+allowlisted sudo command. The updater pins the GitHub repository, validates the
+release version/package identity and checks the published SHA-256 before APT
+installation. Password SSH is only a bootstrap mode; public-key auth is the
+recommended steady state.

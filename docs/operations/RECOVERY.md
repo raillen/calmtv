@@ -25,3 +25,8 @@ package can reset only the UI configuration, preserving runtime state.
 When Calm TV is installed beside another desktop, recovery is scoped to the
 Calm TV session. Selecting the previous desktop session at login remains the
 fallback if the Calm TV session cannot start.
+
+From Home, the remote's `Menu` action opens Diagnostics. The **Terminal
+avançado** action there starts an installed graphical terminal as the current
+user, never as root. It is an optional maintenance escape hatch; normal users
+do not need it for ordinary media flows.
