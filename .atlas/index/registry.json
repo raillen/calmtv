@@ -614,7 +614,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 117,
+      "estimated_tokens": 325,
       "id": "DOC-DOCS-DECISIONS-ADR-0020-UPDATES",
       "path": "docs/decisions/ADR-0020-UPDATES.md",
       "schema_version": 1,
@@ -978,7 +978,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 432,
+      "estimated_tokens": 957,
       "id": "DOC-DOCS-OPERATIONS-UPDATES",
       "path": "docs/operations/UPDATES.md",
       "schema_version": 1,
@@ -1043,7 +1043,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 441,
+      "estimated_tokens": 493,
       "id": "DOC-DOCS-PRODUCT-REQUIREMENTS",
       "path": "docs/product/REQUIREMENTS.md",
       "schema_version": 1,
@@ -1056,7 +1056,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 288,
+      "estimated_tokens": 293,
       "id": "DOC-DOCS-PRODUCT-ROADMAP",
       "path": "docs/product/ROADMAP.md",
       "schema_version": 1,
@@ -1069,7 +1069,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 355,
+      "estimated_tokens": 375,
       "id": "DOC-DOCS-PRODUCT-SCOPE",
       "path": "docs/product/SCOPE.md",
       "schema_version": 1,
@@ -1277,7 +1277,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 130,
+      "estimated_tokens": 158,
       "id": "DOC-DOCS-RELEASE-RELEASE-PROCESS",
       "path": "docs/release/RELEASE_PROCESS.md",
       "schema_version": 1,
@@ -1498,7 +1498,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 147,
+      "estimated_tokens": 176,
       "id": "DOC-DOCS-TESTING-RELEASE-GATES",
       "path": "docs/testing/RELEASE_GATES.md",
       "schema_version": 1,
@@ -1680,7 +1680,7 @@
     {
       "authority": "canonical",
       "category": null,
-      "estimated_tokens": 178,
+      "estimated_tokens": 194,
       "id": "DOC-DOCS-USER-ATLAS",
       "path": "docs/user/ATLAS.md",
       "schema_version": 1,

@@ -42,6 +42,55 @@ O SHA-256 protege a integridade do arquivo baixado, mas ainda não substitui um
 repositório APT assinado. Assinatura/proveniência completa permanece gate de
 release e hardening posterior.
 
+## Atualizações automáticas — MVP
+
+**Status: Planejado.** O caminho automático ainda não está conectado ao menu
+de Configurações nem possui um `systemd.timer` instalado. O bootstrap remoto e
+o comando manual acima são a base operacional existente.
+
+O comportamento alvo é:
+
+1. um serviço leve verifica periodicamente a origem de updates, sem manter
+   processo pesado residente;
+2. a Shell mostra a versão instalada e a existência de nova versão em
+   **Configurações → Sistema → Atualizações**;
+3. o usuário pode escolher **Instalar e reiniciar**;
+4. a instalação ocorre por APT/PolicyKit, fora do processo GTK e sem `sudo`
+   chamado pela UI;
+5. o pacote é baixado em arquivo temporário e validado por repositório
+   assinado, checksum, nome, versão e arquitetura;
+6. a Shell mostra progresso, erro compreensível e resultado;
+7. o display manager só é reiniciado depois da instalação bem-sucedida;
+8. após o retorno, um health check confirma que a nova Shell iniciou;
+9. se a inicialização falhar, o recovery mantém o desktop anterior acessível e
+   oferece rollback para a versão anterior quando o mecanismo de pacotes
+   permitir.
+
+Durante o MVP, a política padrão deve ser **verificação automática com
+confirmação humana para instalar**. Atualização totalmente silenciosa fica
+condicionada a metadados assinados, janela configurável, rollback testado e
+recuperação independente da Shell.
+
+Contrato de configuração proposto, ainda não implementado:
+
+```text
+updates.enabled
+updates.channel
+updates.check_interval
+updates.install_policy = confirm | unattended
+updates.restart_policy = ask | after_install
+```
+
+Critérios de aceite do Goal de atualização automática:
+
+- nenhum update é instalado quando a assinatura/checksum é inválido;
+- falha de rede não altera o sistema nem bloqueia a Home;
+- versões iguais ou antigas não são instaladas;
+- a UI não congela durante consulta/download/instalação;
+- reinício exige confirmação, exceto em política explicitamente configurada;
+- atualização interrompida deixa diagnóstico e caminho de recovery;
+- o fluxo funciona por D-pad, teclado e sem terminal.
+
 ## Future
 Evaluate transactional/A-B image update or `systemd-sysupdate` only after the product is stable enough to justify the added image/partition complexity.
 

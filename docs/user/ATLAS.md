@@ -8,6 +8,7 @@
 - [Add IPTV](how-to/ADD_IPTV_PLAYLIST.md)
 - [Add a ROM library](how-to/ADD_ROM_LIBRARY.md)
 - [Organize downloads](how-to/ORGANIZE_DOWNLOADS.md)
+- [Atualizações e manutenção remota](../operations/UPDATES.md)
 - [Use network media](how-to/USE_NETWORK_MEDIA.md)
 - [Use commercial streaming](how-to/USE_STREAMING_SERVICES.md)
 

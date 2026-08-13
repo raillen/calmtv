@@ -8,7 +8,7 @@ Roadmap phases describe direction; completion is defined by locked JSON Goals un
 | P01 | Bootable navigable shell | P01-G01 — EXECUTING (target gates pending) |
 | P02 | System adapters and Quick Settings | P02-G01 — EXECUTING (host evidence partial) |
 | P03 | MediaCore, local media, NanoTube, IPTV | P03-G01 — EXECUTING (host evidence partial) |
-| P04 | MVP closure: RetroArch, optional streaming runtime, diagnostics, recovery and package updates | P04-G01 — EXECUTING (host evidence partial) |
+| P04 | MVP closure: RetroArch, optional streaming runtime, diagnostics, recovery and controlled automatic package updates | P04-G01 — EXECUTING (host evidence partial) |
 | P05 | Smart Organizer and remote ecosystem | P05-G01 — PLANNED |
 | P06 | Hardening and release candidate | P06-G01 — PLANNED |
 

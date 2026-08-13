@@ -12,6 +12,8 @@
 - Manage Wi-Fi/Ethernet, Bluetooth, volume/output, display, removable storage, suspend/reboot/poweroff.
 - Use Debian/kernel/services for hardware support; project owns UX/policy.
 - Detect and surface hardware decode capabilities.
+- Check for Calm TV updates automatically and expose controlled installation,
+  confirmation and restart from Settings.
 
 ### Media
 - Local audio/video playback.
@@ -46,4 +48,6 @@
 - High-risk processes sandboxed.
 - Reproducible package/image pipeline.
 - Clean recovery path from shell/update failures.
+- Update integrity, interrupted-update recovery and a user-visible update
+  status path.
 - Canonical docs and JSON contracts validated in CI.

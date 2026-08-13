@@ -5,7 +5,8 @@
 3. Build packages/image from clean CI.
 4. Run unit/integration/static/security checks.
 5. Run physical hardware matrix.
-6. Exercise update/migration/recovery.
+6. Exercise manual and automatic update, migration and recovery, including
+   signature failure, network interruption, restart and rollback scenarios.
 7. Validate canonical docs, local links and Atlas JSON.
 8. Produce checksums and release notes.
 9. Release Verifier independently checks evidence.

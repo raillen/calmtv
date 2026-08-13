@@ -9,7 +9,8 @@ A release candidate requires:
 - hardware matrix pass for promised capabilities;
 - performance budgets pass or documented approved amendment;
 - security sandbox checks;
-- migration/update/recovery exercise;
+- migration/update/recovery exercise, including automatic check, confirmation,
+  interrupted download, invalid signature/checksum, restart and rollback;
 - user/support/release docs complete;
 - checksums/artifact provenance recorded.
 

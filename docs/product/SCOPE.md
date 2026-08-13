@@ -16,7 +16,8 @@ The first product milestone includes:
 - RetroArch integration for selected 8/16-bit systems.
 - File/download manager.
 - Optional Firefox ESR kiosk runtime for supported commercial streaming sites.
-- Diagnostics, recovery path and basic update/package flow.
+- Diagnostics, recovery path and basic update/package flow, including
+  automatic update checking and controlled installation from Settings.
 
 ## P1/P2 after MVP
 
